@@ -43,15 +43,10 @@
 
 ### Status
 - ✅ Deliverable complete and verified locally.
-- ⚠️ **Not pushed:** this project directory is **not a git repository** (no `.git`). Per the
-  workflow, code should be pushed to main, but there is no repo/remote configured here.
-  To version and push, run (from the project root):
-  ```
-  git init
-  git add PDF/.md files, Kaiser_Retirement_Benefits_Guide.html, PLAN_LOG.md CHANGE_LOG.md TODO.md
-  git commit -m "feat: add Kaiser retirement guide + SPD markdown conversions"
-  git remote add origin <remote-url>
-  git push -u origin main
-  ```
+- ✅ **Pushed 2026-07-06:** repo initialized and pushed to
+  https://github.com/jamescanode-alt/Kaiser-Benefit-Resource-Guide (private, branch `main`,
+  commit `3378ed9`). Contents: the guide, all 101 SPD `.md` conversions, and project logs.
+  **PDFs (1.2 GB) are gitignored and remain local only**, per user direction; the
+  `Colorado/Webinars/*.pptx` files also remain local.
 - Open follow-ups tracked in TODO.md (advisor contacts, "Confirm in SPD" multipliers,
   physician/special-plan appendix, per-region reduction factors).

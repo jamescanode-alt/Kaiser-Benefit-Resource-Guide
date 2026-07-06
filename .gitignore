@@ -1,2 +1,5 @@
 *.pdf
 .claude/
+.DS_Store
+.impeccable/
+*.pptx
