@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaiser Permanente Retirement Benefits: Advisor Field Guide</title>
+<style>
+:root{
+  --cream:#F7F4E9;
+  --cream-deep:#EFE9D6;
+  --ink:#10243F;
+  --ink-soft:#33486A;
+  --blue:#1E55C0;
+  --blue-bright:#2E84D6;
+  --sky:#cfe1f5;
+  --gold:#C08A2D;
+  --gold-soft:#E4C98A;
+  --line:#D8D0BA;
+  --paper:#FDFCF6;
+  --good:#2E7D52;
+  --warn:#B5532A;
+  --kp:#0069A7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.sans{font-family:'Helvetica Neue',Arial,sans-serif}
+
+/* ---------- Layout shell ---------- */
+.wrap{display:flex;max-width:1400px;margin:0 auto;min-height:100vh}
+nav.side{
+  width:288px;flex:0 0 288px;
+  position:sticky;top:0;align-self:flex-start;
+  height:100vh;overflow-y:auto;
+  background:var(--ink);
+  color:var(--cream);
+  padding:30px 0 60px;
+}
+nav.side .brand{padding:0 26px 18px}
+nav.side .brand .logo{font-size:25px;font-weight:bold;letter-spacing:.5px;color:#fff;font-family:Georgia,serif}
+nav.side .brand .team{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:4px;color:var(--gold-soft);margin-top:3px}
+nav.side .brand .sub{font-size:12px;color:#9fb4d4;margin-top:14px;line-height:1.5;font-family:'Helvetica Neue',Arial,sans-serif}
+nav.side .planpick{margin-top:16px;border-top:1px solid #24426b;padding-top:16px}
+nav.side .planpick .pp-k{display:block;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#7d93b6;margin-bottom:5px;font-family:'Helvetica Neue',Arial,sans-serif}
+nav.side .planpick select{width:100%;padding:9px 30px 9px 11px;background-color:#163459;color:#fff;border:1px solid #24426b;border-radius:6px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:.2px;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M0 0l5 6 5-6z' fill='%23E4C98A'/></svg>");background-repeat:no-repeat;background-position:right 11px center}
+nav.side .planpick select:hover{border-color:var(--gold)}
+nav.side .planpick select:focus{outline:none;border-color:var(--gold)}
+nav.side .planpick .pp-meta{margin-top:9px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:#9fb4d4;line-height:1.5}
+nav.side .planpick .pp-meta b{color:var(--gold-soft);font-weight:600}
+nav.side .navlabel{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;color:#7d93b6;padding:18px 26px 8px;text-transform:uppercase}
+nav.side a{
+  display:block;padding:8px 26px 8px 26px;
+  color:#c6d4e8;text-decoration:none;font-size:14px;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  border-left:3px solid transparent;transition:.15s;
+}
+nav.side a .num{color:var(--gold-soft);font-size:11px;margin-right:9px;letter-spacing:1px}
+nav.side a:hover{background:#163459;color:#fff}
+nav.side a.active{background:#163459;color:#fff;border-left-color:var(--gold)}
+
+main{flex:1;min-width:0;padding:0 0 80px}
+section.block{padding:64px 56px;max-width:900px;border-bottom:1px solid var(--line)}
+@media(max-width:980px){
+  nav.side{display:none}
+  section.block{padding:44px 24px}
+}
+
+/* ---------- Typography ---------- */
+.eyebrow{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
+h1{font-size:46px;line-height:1.08;font-weight:normal;letter-spacing:-.5px;margin-bottom:18px}
+h2{font-size:34px;line-height:1.12;font-weight:normal;letter-spacing:-.4px;margin-bottom:14px}
+h3{font-size:21px;font-weight:normal;margin:34px 0 12px;color:var(--ink)}
+h4{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft);margin:26px 0 10px;font-weight:700}
+p{margin-bottom:14px;font-size:16.5px}
+p.lead{font-size:19px;color:var(--ink-soft);line-height:1.55}
+a.inline{color:var(--blue)}
+strong{font-weight:bold}
+em{color:var(--ink-soft)}
+.small{font-size:13.5px;color:var(--ink-soft);font-family:'Helvetica Neue',Arial,sans-serif}
+ul.tight,ol.tight{margin:10px 0 16px 22px}
+ul.tight li,ol.tight li{font-size:16px;margin-bottom:6px}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:linear-gradient(160deg,#10243F 0%,#16345b 60%,#1d4377 100%);
+  color:var(--cream);padding:74px 56px 64px;border-bottom:5px solid var(--gold);
+  position:relative;overflow:hidden;
+}
+.hero .eyebrow{color:var(--gold-soft)}
+.hero h1{color:#fff;max-width:720px}
+.hero p.lead{color:#cdddf2;max-width:640px}
+.hero .gear{position:absolute;right:-90px;top:-40px;width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(circle at 40% 40%, rgba(46,132,214,.28), transparent 60%);pointer-events:none}
+.hero .meta{display:flex;gap:38px;margin-top:34px;flex-wrap:wrap;font-family:'Helvetica Neue',Arial,sans-serif}
+.hero .meta div span{display:block}
+.hero .meta .k{font-size:10.5px;letter-spacing:2px;color:#8fb0d6;text-transform:uppercase}
+.hero .meta .v{font-size:15px;color:#fff;margin-top:3px}
+@media(max-width:980px){.hero{padding:54px 24px 44px}}
+
+/* ---------- Callouts ---------- */
+.callout{border-left:4px solid var(--blue);background:var(--paper);padding:18px 22px;margin:22px 0;border-radius:0 6px 6px 0}
+.callout.gold{border-left-color:var(--gold);background:#fbf6ea}
+.callout.warn{border-left-color:var(--warn);background:#fbf0ea}
+.callout.good{border-left-color:var(--good);background:#eef6f1}
+.callout .tag{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:6px;display:block}
+.callout.gold .tag{color:var(--gold)}
+.callout .tag.blue{color:var(--blue)}
+.callout.warn .tag{color:var(--warn)}
+.callout.good .tag{color:var(--good)}
+.callout p:last-child{margin-bottom:0}
+.callout p{font-size:15.5px}
+
+/* advisor lens recurring box */
+.lens{background:#10243F;color:#e7eefa;border-radius:8px;padding:22px 24px;margin:26px 0;position:relative;overflow:hidden}
+.lens .tag{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-soft);font-weight:700;display:block;margin-bottom:8px}
+.lens p{color:#dbe5f5;font-size:15.5px}
+.lens p:last-child{margin-bottom:0}
+.lens strong{color:#fff}
+
+/* ---------- Tables ---------- */
+table{width:100%;border-collapse:collapse;margin:20px 0;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14.5px;background:var(--paper)}
+th{background:var(--ink);color:#fff;text-align:left;padding:11px 14px;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;font-weight:600}
+td{padding:11px 14px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#fbf9f1}
+td.num{font-variant-numeric:tabular-nums;text-align:right}
+table.v-lines th:not(:last-child), table.v-lines td:not(:last-child) { border-right: 1px solid var(--line); }
+table.v-lines th:not(:last-child) { border-right-color: rgba(255, 255, 255, 0.2); }
+.text-center { text-align: center !important; }
+
+/* ---------- Two col ---------- */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:22px 0}
+@media(max-width:640px){.cols{grid-template-columns:1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:20px 22px}
+.card h4{margin-top:0}
+.card .big{font-size:30px;color:var(--blue);font-family:Georgia,serif}
+
+/* ---------- Formula strip ---------- */
+.formula{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;margin:24px 0;font-family:'Helvetica Neue',Arial,sans-serif}
+.fbox{background:var(--blue);color:#fff;border-radius:8px;padding:14px 16px;flex:1;min-width:120px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.fbox .ft{font-size:11px;letter-spacing:1px;text-transform:uppercase;opacity:.8}
+.fbox .fv{font-size:14px;margin-top:4px;font-weight:600}
+.fbox.alt{background:var(--gold)}
+.fbox.ghost{background:var(--cream-deep);color:var(--ink)}
+.fop{display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--ink-soft);font-family:Georgia,serif;padding:0 2px}
+
+/* ---------- Pillars ---------- */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0}
+@media(max-width:720px){.pillars{grid-template-columns:1fr}}
+.pillars.four{grid-template-columns:repeat(4,1fr)}
+@media(max-width:840px){.pillars.four{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.pillars.four{grid-template-columns:1fr}}
+.pillar{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:22px;border-top:4px solid var(--blue)}
+.pillar.b{border-top-color:var(--gold)}
+.pillar.c{border-top-color:var(--good)}
+.pillar.d{border-top-color:var(--ink-soft)}
+.pillar .ico{font-size:24px;margin-bottom:8px}
+.pillar h4{margin:0 0 8px}
+.pillar p{font-size:14px;margin-bottom:0;color:var(--ink-soft)}
+
+/* ---------- Calculator ---------- */
+.calc{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:26px;margin:26px 0;box-shadow:0 2px 14px rgba(16,36,63,.06)}
+.calc .row{display:flex;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap;font-family:'Helvetica Neue',Arial,sans-serif}
+.calc label{flex:0 0 220px;font-size:13.5px;color:var(--ink-soft)}
+.calc select,.calc input[type=number]{flex:1;padding:8px 10px;border:1px solid var(--line);border-radius:6px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;background:#fff;min-width:140px}
+.calc input[type=number]{text-align:right}
+@media(max-width:600px){.calc label{flex:0 0 100%}}
+.results{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+@media(max-width:680px){.results{grid-template-columns:1fr}}
+.rcard{border-radius:10px;padding:18px;border:1px solid var(--line);background:var(--cream);display:flex;flex-direction:column;min-height:150px}
+.rcard .rlabel{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
+.rcard .rval{font-size:26px;color:var(--ink);margin:8px 0 6px;line-height:1.1;font-variant-numeric:tabular-nums}
+.rcard .rdesc{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px;color:var(--ink-soft);line-height:1.45;margin-top:auto}
+.rcard.good{background:#eef6f1;border-color:#bcd9c8}
+.rcard.good .rval{color:var(--good)}
+.rcard.warn{background:#fbf0ea;border-color:#e6c3b2}
+.rcard.warn .rval{color:var(--warn)}
+.rcard.neutral{background:#eef3fb;border-color:#c4d6ef}
+.rcard.neutral .rval{color:var(--blue)}
+.status-banner{margin-top:18px;padding:14px 18px;border-radius:8px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14.5px;font-weight:600}
+.status-banner.met{background:#10243F;color:#fff}
+.status-banner.met .sb-sub{color:#9fb4d4;font-weight:400;font-size:13px;margin-top:4px;display:block}
+.status-banner.notmet{background:#fbf0ea;color:var(--warn);border:1px solid #e6c3b2}
+.status-banner.notmet .sb-sub{color:#8a4a2e;font-weight:400;font-size:13px;margin-top:4px;display:block}
+.calc .note{font-size:12.5px;color:var(--ink-soft);font-family:'Helvetica Neue',Arial,sans-serif;margin-top:14px;line-height:1.5}
+
+/* ---------- selected-plan banner in body ---------- */
+.planbar{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--kp);border-radius:0 8px 8px 0;padding:16px 20px;margin:22px 0;font-family:'Helvetica Neue',Arial,sans-serif}
+.planbar .pb-k{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--kp);font-weight:700}
+.planbar .pb-name{font-size:17px;color:var(--ink);margin:4px 0 8px;font-weight:600}
+.planbar .pb-facts{display:flex;gap:26px;flex-wrap:wrap}
+.planbar .pb-facts div span{display:block}
+.planbar .pb-facts .k{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft)}
+.planbar .pb-facts .v{font-size:16px;color:var(--ink);margin-top:2px;font-weight:600}
+
+/* steps */
+.steps{counter-reset:s;margin:22px 0}
+.step{display:flex;gap:16px;margin-bottom:16px;align-items:flex-start}
+.step .sn{counter-increment:s;flex:0 0 34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;font-size:15px}
+.step .sn::before{content:counter(s)}
+.step .sc{flex:1;padding-top:3px}
+.step .sc strong{display:block;margin-bottom:2px}
+.step .sc p{font-size:14.5px;margin:0;color:var(--ink-soft)}
+
+/* decision compare */
+.compare{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:24px 0}
+@media(max-width:760px){.compare{grid-template-columns:1fr}}
+.opt{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column}
+.opt h4{margin-top:0;color:var(--ink);font-size:13px}
+.opt .who{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px;color:var(--blue);margin-bottom:12px;font-weight:600}
+.opt ul{list-style:none;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px}
+.opt li{padding:5px 0 5px 20px;position:relative;color:var(--ink-soft)}
+.opt li.pro::before{content:"+";position:absolute;left:0;color:var(--good);font-weight:700}
+.opt li.con::before{content:"\2013";position:absolute;left:0;color:var(--warn);font-weight:700}
+
+/* glossary */
+.gloss dt{font-weight:bold;margin-top:16px;font-size:16px}
+.gloss dd{margin:3px 0 0;font-size:15px;color:var(--ink-soft)}
+
+/* footer */
+.foot{padding:48px 56px;background:var(--ink);color:#c6d4e8;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;line-height:1.7}
+.foot .ftitle{color:#fff;font-size:15px;letter-spacing:1px;margin-bottom:8px;font-weight:600}
+.foot a{color:var(--gold-soft)}
+.foot .disc{margin-top:22px;font-size:11.5px;color:#7d93b6;border-top:1px solid #24426b;padding-top:18px}
+@media(max-width:980px){.foot{padding:36px 24px}}
+
+/* contacts */
+.contacts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+@media(max-width:600px){.contacts{grid-template-columns:1fr}}
+.contact{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px 18px;font-family:'Helvetica Neue',Arial,sans-serif}
+.contact .cn{font-weight:700;font-size:14px}
+.contact .cd{font-size:13px;color:var(--ink-soft);margin-top:4px}
+
+.pn{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase}
+hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="side">
+  <div class="brand">
+    <div class="logo">Farther</div>
+    <div class="team">FOCUS TEAM</div>
+    <div class="sub">Kaiser Permanente Retirement Benefits<br>Advisor Field Guide</div>
+    <div class="planpick">
+      <div class="pp-k">Select plan / union</div>
+      <select id="planSel" aria-label="Choose a Kaiser plan or union">
+        <option value="">— All plans (general guide) —</option>
+        <optgroup label="Colorado">
+          <option value="Colorado_SPD_CO_L1_md">International Union of Operating Engineers, Local 1, AFL-CIO</option>
+          <option value="Colorado_SPD_CO_RES_md">Pharmacy Residents Colorado</option>
+          <option value="Colorado_SPD_CO_CPMG_md">Physicians, Executives, and Podiatrists Colorado Permanente Medical Group</option>
+          <option value="Colorado_SPD_CO_SAL_md">Salaried Employees Colorado</option>
+          <option value="Colorado_SPD_CO_L105_md">Service Employees International Union, Local 105</option>
+          <option value="Colorado_SPD_CO_L7_MHW_md">United Food and Commercial Workers, Local 7 Mental Health Workers</option>
+          <option value="Colorado_SPD_CO_L7_PHC_md">United Food and Commercial Workers, Local 7, Professional and Health Care Division</option>
+        </optgroup>
+        <optgroup label="Executives">
+          <option value="Executives_SPD_EXECS_md">Executives Kaiser Foundation Health Plan, Inc.</option>
+        </optgroup>
+        <optgroup label="Georgia">
+          <option value="Georgia_SPD_GA_SAL_md">Salaried and Hourly Employees Georgia</option>
+          <option value="Georgia_SPD_GA_UFCW_md">United Food and Commercial Workers (UFCW) Union, Local 1996</option>
+        </optgroup>
+        <optgroup label="Hawaii">
+          <option value="Hawaii_SPD_HI_HNHP_md">Hawaii Nurses and Healthcare Professionals (HNHP) Home Health Nurses</option>
+          <option value="Hawaii_SPD_HI_HNA_Followers_md">Hawaii Nurses Association Followers Hawaii</option>
+          <option value="Hawaii_SPD_HI_HNA_md">Hawaii Nurses Association Hawaii</option>
+          <option value="Hawaii_SPD_HI_L142_md">International Longshore and Warehouse Union, Local 142</option>
+          <option value="Hawaii_SPD_HI_L142_Followers_md">International Longshore and Warehouse Union, Local 142 Followers</option>
+          <option value="Hawaii_SPD_HI_NUNE_md">Non-Union Non-Exempt Hawaii</option>
+          <option value="Hawaii_SPD_HI_NUHW_IBHS_md">NUHW Integrated Behavioral Health and Inpatient Medical Social Workers</option>
+          <option value="Hawaii_SPD_HI_SAL_md">Salaried Employees and Resident Physicians Hawaii</option>
+          <option value="Hawaii_SPD_HI_UNAC_RX_md">UNAC United Pharmacists of Hawaii Hawaii</option>
+          <option value="Hawaii_SPD_HI_UTHI_md">UNAC United Therapists of Hawaii Hawaii</option>
+          <option value="Hawaii_SPD_HI_L5_md">UNITE HERE, Local 5, AFL-CIO Hawaii</option>
+        </optgroup>
+        <optgroup label="IT">
+          <option value="IT_SPD_KPWA_NONREP_md">Nonrepresented Employees (Program Offices & IT)</option>
+          <option value="IT_SPD_POIT_md">Program Offices and Information Technology (POIT)</option>
+          <option value="IT_SPD_POIT_INTERNS_md">Program Offices and Information Technology Interns</option>
+          <option value="IT_SPD_IT_DSW_md">Service Employees International Union, Desktop Support Workers</option>
+          <option value="IT_SPD_GA_UFCW_md">United Food and Commercial Workers (UFCW) Union, Local 1996</option>
+          <option value="IT_SPD_SC_UHW_md">United Healthcare Workers West Moreno Valley Medical Center</option>
+        </optgroup>
+        <optgroup label="Maui Health System">
+          <option value="Maui_Health_System_SPD_MHS_SPFPA_md">International Union, Security, Police and Fire Professionals of America</option>
+          <option value="Maui_Health_System_SPD_MHS_NUE_md">Nonrepresented Employees Maui Health System</option>
+          <option value="Maui_Health_System_SPD_MHS_UNAC_md">United Nurses Associations of California Union of Health Care Professionals</option>
+          <option value="Maui_Health_System_SPD_MHS_UPW_md">United Public Workers, AFSCME, Local 646 AFL-CIO Maui Health System</option>
+        </optgroup>
+        <optgroup label="Mid Atlantic States">
+          <option value="Mid_Atlantic_States_SPD_MAS_L99_md">International Union of Operating Engineers, Local 99-99A</option>
+          <option value="Mid_Atlantic_States_SPD_MAS_L2_md">Office and Professional Employees International Union (OPEIU), Local 2, Washington D.C. & Baltimore</option>
+          <option value="Mid_Atlantic_States_SPD_MAS_L2_OPTRX_md">Office and Professional Employees International Union, Local 2</option>
+          <option value="Mid_Atlantic_States_SPD_MAS_SAL_md">Salaried - Exempt and Non-Exempt Mid-Atlantic States</option>
+          <option value="Mid_Atlantic_States_SPD_MAS_L400_L27_md">United Food and Commercial Workers (UFCW), Local 400 and Local 27</option>
+        </optgroup>
+        <optgroup label="Nor Cal">
+          <option value="Nor_Cal_SE39_Pension_SPD_eff_10_01_20_Local39_md">Stationary Engineers, Local 39 (Multiemployer Pension)</option>
+          <option value="Nor_Cal_SPD_NC_CNA_md">California Nurses Association Northern California</option>
+          <option value="Nor_Cal_SPD_ESC_Clinical_Laboratory_Scientists_md">Engineers and Scientists of California, Local 20 Clinical Laboratory Scientists</option>
+          <option value="Nor_Cal_SPD_NC_Genetics_Counselors_md">Engineers and Scientists of California, Local 20 IFPTE AFL-CIO & CLC</option>
+          <option value="Nor_Cal_SPD_NC_L20OPT_md">Engineers and Scientists of California, Local 20 IFPTE, AFL-CIO & CLC</option>
+          <option value="Nor_Cal_SPD_NC_Home_Health_Therapists_md">Engineers and Scientists of California, Local 20, IFPTE AFL-CIO & CLC</option>
+          <option value="Nor_Cal_SPD_NC_L39_md">International Union of Operating Engineers (IUOE) Stationary Engineers, Local 39, AFL-CIO</option>
+          <option value="Nor_Cal_SPD_NC_MHT_md">Mental Health Trainees Physical Therapy Specialty Projects</option>
+          <option value="Nor_Cal_SPD_NC_IBHS_md">National Union of Healthcare Workers (NUHW), Integrated Behavioral Health Services</option>
+          <option value="Nor_Cal_SPD_NC_FOLLOWERS_md">Non-Represented Followers Northern California</option>
+          <option value="Nor_Cal_SPD_NC_L29_md">Office and Professional Employees International Union, Local 29 AFL-CIO & CLC</option>
+          <option value="Nor_Cal_SPD_NC_POST_md">Physical/Occupational/Speech Therapists (POST)</option>
+          <option value="Nor_Cal_SPD_TPMGRet123_1_md">TPMG Retirement Plans 1/2/3 (Physicians) (alt. copy)</option>
+          <option value="Nor_Cal_SPD_TPMGRet123_md">TPMG Retirement Plans 1/2/3 (Physicians)</option>
+          <option value="Nor_Cal_SPD_NC_RES_md">Residents Northern California</option>
+          <option value="Nor_Cal_SPD_NC_SAL_1_md">Salaried and Non-Union Non-Exempt Northern California (alt. copy)</option>
+          <option value="Nor_Cal_SPD_NC_SAL_md">Salaried and Non-Union Non-Exempt Northern California</option>
+          <option value="Nor_Cal_SPD_NC_TPMG_1_md">Salaried/Non-Union The Permanente Medical Group (alt. copy)</option>
+          <option value="Nor_Cal_SPD_NC_TPMG_md">Salaried and Non-Union Non-Exempt The Permanente Medical Group, Inc.</option>
+          <option value="Nor_Cal_SPD_NC_UHW_md">SEIU United Healthcare Workers West Northern California</option>
+          <option value="Nor_Cal_SPD_NC_OW_md">SEIU United Healthcare Workers West, Optical Unit Northern California</option>
+          <option value="Nor_Cal_SPD_NC_GPP_md">The Guild for Professional Pharmacists Northern California</option>
+          <option value="Nor_Cal_SPD_NC_HE_md">United Healthcare Workers West Health Educators</option>
+          <option value="Nor_Cal_SPD_NC_MSW_md">United Healthcare Workers West Medical Social Workers</option>
+          <option value="Nor_Cal_SPD_NC_RD_md">United Healthcare Workers West Registered Dietitians</option>
+        </optgroup>
+        <optgroup label="Northwest">
+          <option value="Northwest_SPD_NW_L28_md">International Longshore & Warehouse Union (ILWU), Local 28, AFL-CIO</option>
+          <option value="Northwest_SPD_NW_L701_md">International Union of Operating Engineers, Local 701</option>
+          <option value="Northwest_SPD_NW_NUNE_md">Non-Union Non-Exempt Northwest</option>
+          <option value="Northwest_SPD_NW_5017PLP_md">Oregon Federation of Nurses and Health Professionals (OFNHP), Local 5017, Professionals</option>
+          <option value="Northwest_SPD_NW_5017DH_md">Oregon Federation of Nurses and Health Professionals, Dental Hygienists and Technical</option>
+          <option value="Northwest_SPD_NW_5017RN_md">Oregon Federation of Nurses and Health Professionals, Registered Nurses, Local 5017</option>
+          <option value="Northwest_SPD_NW_ONA_md">Oregon Nurses Association Northwest</option>
+          <option value="Northwest_SPD_NW_SAL_md">Salaried Northwest</option>
+          <option value="Northwest_SPD_NW_L49_md">Service Employees International Union (SEIU), Local 49</option>
+          <option value="Northwest_SPD_NW_GPP_md">The Guild for Professional Pharmacists Northwest</option>
+          <option value="Northwest_SPD_NW_L555IMG_md">United Food and Commercial Workers (UFCW), Local 555 Imaging Services</option>
+          <option value="Northwest_SPD_NW_L555RX_md">United Food and Commercial Workers (UFCW), Local 555 Non-Registered Drug Services</option>
+        </optgroup>
+        <optgroup label="SoCal">
+          <option value="SoCal_SPD_SC_CNA_LAMC_md">California Nurses Association (Inpatient/Home Health/Hospice RNs) LAMC</option>
+          <option value="SoCal_SPD_SC_L166_md">International Brotherhood of Teamsters Local 166, AFL-CIO</option>
+          <option value="SoCal_SPD_SC_L501_md">International Union of Operating Engineers, Local 501, AFL-CIO</option>
+          <option value="SoCal_SPD_SC_KPASCO_md">Kaiser Permanente Association of Southern California Optometrists</option>
+          <option value="SoCal_SPD_SC_KPMWON_SCNSC_md">Kaiser Permanente Midwives / Wound Ostomy Nurses</option>
+          <option value="SoCal_SPD_SC_KPNAA_md">Kaiser Permanente Nurse Anesthetists Association Southern California</option>
+          <option value="SoCal_SPD_SC_PSWC_md">National Union of Healthcare Workers, Psych-Social Chapter</option>
+          <option value="SoCal_SPD_SC_NUH_md">Non-Union Hourly Employees Lifestyle Educators</option>
+          <option value="SoCal_SPD_SC_SAL_md">Non-Union Non-Exempt, Salaried, and Salaried Patient Care Providers</option>
+          <option value="SoCal_SPD_SCPMG_SAL_md">Non-Union Non-Exempt, Salaried, and Salaried Patient Care Providers</option>
+          <option value="SoCal_SPD_SC_L30_md">Office and Professional Employees International Union (OPEIU), Local 30 AFL-CIO, CLC</option>
+          <option value="SoCal_SPD_SC_RES_md">Residents Southern California</option>
+          <option value="SoCal_SPD_SC_L121_md">Service Employees International Union, Local 121 Southern California</option>
+          <option value="SoCal_SPD_SC_STIF_md">Students, Trainees, Interns, and Fellows Southern California</option>
+          <option value="SoCal_SPD_SC_DASH_md">UNAC/UHCP Dietitians, Audiologists, Speech, and Health Educators</option>
+          <option value="SoCal_SPD_SC_UFCW_B_md">United Food and Commercial Workers International Union (UFCW), Bakersfield</option>
+          <option value="SoCal_SPD_SC_L770_md">United Food and Commercial Workers International Union (UFCW), Local 770 Kern County</option>
+          <option value="SoCal_SPD_SC_UFCW_RX_md">United Food and Commercial Workers (UFCW) Pharmacy</option>
+          <option value="SoCal_SPD_SC_UHW_md">United Healthcare Workers West Moreno Valley Medical Center</option>
+          <option value="SoCal_SPD_SC_UNAC_md">United Nurses Association of California (UNAC/UHCP)</option>
+          <option value="SoCal_SPD_SC_PHARM_md">United Pharmacists of Southern California Southern California</option>
+          <option value="SoCal_SPD_SC_L7600_md">United Steelworks of America Local 7600, AFL-CIO-CLC</option>
+          <option value="SoCal_SPD_SC_UTSC_md">United Therapists of Southern California Southern California</option>
+        </optgroup>
+        <optgroup label="Washington">
+          <option value="Washington_SPD_KPWA_NONREP_md">Nonrepresented Employees (Program Offices & IT)</option>
+          <option value="Washington_SPD_KPWA_OPEIU_md">Office of Professional Employees International Union, Local 8</option>
+          <option value="Washington_SPD_KPWA_SEIU_md">Service Employees International Union (SEIU) Healthcare 1199NW</option>
+          <option value="Washington_SPD_KPWA_UFCW_md">United Food and Commercial Workers International Union, Local 3000</option>
+        </optgroup>
+      </select>
+      <div class="pp-meta" id="ppMeta">Choose a group to see its pension multiplier and region, and to set the estimator below.</div>
+    </div>
+  </div>
+  <div class="navlabel">Foundations</div>
+  <a href="#landscape" class="navitem"><span class="num">01</span>The benefit landscape</a>
+  <a href="#eligibility" class="navitem"><span class="num">02</span>Eligibility &amp; vesting</a>
+  <div class="navlabel">The Pension (KPRP)</div>
+  <a href="#formula" class="navitem"><span class="num">03</span>The pension formula</a>
+  <a href="#famc" class="navitem"><span class="num">04</span>Final Average Comp (FAMC)</a>
+  <a href="#early" class="navitem"><span class="num">05</span>Early retirement &amp; Rule of 75</a>
+  <a href="#estimator" class="navitem"><span class="num">06</span>Pension estimator</a>
+  <a href="#payment" class="navitem"><span class="num">07</span>Payment options</a>
+  <div class="navlabel">The Savings Plans</div>
+  <a href="#savings" class="navitem"><span class="num">08</span>TSA 403(b) &amp; Supplemental Savings</a>
+  <div class="navlabel">Advisor Toolkit</div>
+  <a href="#retiree-med" class="navitem"><span class="num">09</span>Retiree medical &amp; more</a>
+  <a href="#irmaa" class="navitem"><span class="num">10</span>IRMAA &amp; Roth planning</a>
+  <a href="#strategy" class="navitem"><span class="num">11</span>Strategy playbook</a>
+  <a href="#protections" class="navitem"><span class="num">12</span>Protections &amp; rules</a>
+  <a href="#glossary" class="navitem"><span class="num">13</span>Glossary</a>
+  <a href="#contacts" class="navitem"><span class="num">14</span>Contacts &amp; sources</a>
+</nav>
+
+<main>
+
+<div class="hero" id="start">
+  <div class="gear"></div>
+  <div class="eyebrow">Onboarding · Internal Reference</div>
+  <h1>The Kaiser Permanente Retirement Benefits Guide</h1>
+  <p class="lead">What a new Farther advisor needs to read, explain, and advise on across Kaiser Permanente's pension and savings plans, from the defined-benefit formula to the decisions that matter most for clients, with a plan/union selector for all 100 Summary Plan Descriptions in the library.</p>
+  <div class="meta">
+    <div><span class="k">Core plan</span><span class="v">KP Retirement Plan (defined benefit)</span></div>
+    <div><span class="k">Population</span><span class="v">11 regions · 100 union &amp; salaried groups</span></div>
+    <div><span class="k">Recordkeeper</span><span class="v">Vanguard (savings) · KPRC (pension)</span></div>
+    <div><span class="k">Source</span><span class="v">Summary Plan Descriptions (SPDs)</span></div>
+  </div>
+</div>
+
+<section class="block" id="landscape">
+  <div class="pn">Section 01</div>
+  <h2>The benefit landscape</h2>
+  <p>A retiring Kaiser Permanente employee may draw income from up to three layers. Understanding how they stack helps you frame the whole picture in a first meeting.</p>
+  <div class="pillars">
+    <div class="pillar">
+      <div class="ico">&#127963;&#65039;</div>
+      <h4>KP Pension</h4>
+      <p>Employer-funded, defined-benefit lifetime pension under the Kaiser Permanente Retirement Plan (KPRP). Paid as a monthly annuity or a lump sum. The core of this guide.</p>
+    </div>
+    <div class="pillar b">
+      <div class="ico">&#128188;</div>
+      <h4>KP Savings Plans</h4>
+      <p>The Tax-Sheltered Annuity (403(b)) plus, for many groups, an employer-funded Supplemental Savings &amp; Retirement Plan. Held at Vanguard. Investable, portable, inheritable.</p>
+    </div>
+    <div class="pillar c">
+      <div class="ico">&#127482;&#127480;</div>
+      <h4>Social Security</h4>
+      <p>The federal layer. Not a KP benefit, but it shapes claiming timing and the income gap you are solving for.</p>
+    </div>
+  </div>
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>The pension and the savings plans play <strong>complementary roles</strong>. The pension is a guaranteed-floor / longevity asset; the 403(b) and Supplemental Savings accounts are the flexible, growth-and-legacy assets. A common planning move is to use the guaranteed pension income to cover essential expenses, freeing the savings accounts to be invested for growth and used for discretionary spending and inheritance.</p>
+  </div>
+  <div class="callout warn">
+    <span class="tag">Accuracy first</span>
+    <p>Kaiser Permanente does not run one uniform plan. It runs <strong>one master plan (the KPRP) with dozens of region- and union-specific supplements</strong>, each with its own pension multiplier, early-retirement terms, and savings-plan features. Figures and tables here are drawn from the SPDs in your project library and are for training. <strong>Always verify a client's actual numbers with the Kaiser Permanente Retirement Center (KPRC) and the controlling SPD before giving advice.</strong></p>
+  </div>
+  <div class="planbar" id="planbar" style="display:none">
+    <div class="pb-k">Selected plan</div>
+    <div class="pb-name" id="pbName">&mdash;</div>
+    <div class="pb-facts">
+      <div><span class="k">Region</span><span class="v" id="pbRegion">&mdash;</span></div>
+      <div><span class="k">Pension multiplier</span><span class="v" id="pbMult">&mdash;</span></div>
+      <div><span class="k">Plan type</span><span class="v" id="pbType">&mdash;</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="eligibility">
+  <div class="pn">Section 02</div>
+  <h2>Eligibility &amp; vesting</h2>
+  <p>Two gates control whether a client has a pension at all: are they an <em>eligible employee</em>, and are they <em>vested</em>?</p>
+
+  <h3>Who is eligible</h3>
+  <p>Eligibility flows from the client's <strong>employee group</strong> (salaried/non-union) or their <strong>collective bargaining agreement</strong> (union). Most groups follow the same pattern: you become a participant on the <strong>first anniversary of your hire date</strong> if you were compensated for at least <strong>1,000 Hours of Service</strong> in the prior 12 months; otherwise on January 1 of the first calendar year you reach 1,000 hours.</p>
+  <div class="callout">
+    <span class="tag blue">Key terms to know</span>
+    <p><strong>Hour of Service</strong> &mdash; any compensated hour, including sick leave, vacation, holidays, and paid leaves. <strong>Year of Service</strong> &mdash; a calendar year (whole or part) with 1,000+ Hours of Service; used for participation, vesting, and early-retirement eligibility. <strong>Credited Service</strong> &mdash; a full year is earned at 2,000+ compensated hours; fewer hours earn proportional Credited Service. Credited Service drives the <em>size</em> of the benefit.</p>
+  </div>
+  <div class="callout gold">
+    <span class="tag">A quiet win: unused sick leave</span>
+    <p>In many KP groups, if a vested employee terminates with at least <strong>250 hours of unused sick leave</strong>, those hours are converted into <strong>additional Credited Service</strong>. For a long-tenured client this can measurably raise the pension. Flag it before a client burns down sick leave on the way out the door.</p>
+  </div>
+
+  <h3>How vesting works</h3>
+  <p>Vesting is when the pension becomes the employee's to keep, even if they leave.</p>
+  <table>
+    <thead><tr><th>Plan</th><th>Vesting requirement</th></tr></thead>
+    <tbody>
+      <tr><td>KP Retirement Plan (defined-benefit pension)</td><td><strong>5 Years of Service</strong>, or reaching age 65 while still employed</td></tr>
+      <tr><td>Tax-Sheltered Annuity (your own 403(b) money)</td><td><strong>Immediate</strong> &mdash; always 100% vested in your own contributions</td></tr>
+      <tr><td>Supplemental Savings &amp; Retirement Plan (employer money)</td><td><strong>100% vested</strong> in employer contributions (per the Salaried SPD); confirm per group</td></tr>
+    </tbody>
+  </table>
+  <p class="small">A client who terminates before vesting in the pension (fewer than 5 Years of Service and under age 65) generally forfeits the pension entirely. Their 403(b) balance is always theirs.</p>
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>A client who is <strong>not yet vested</strong> and considering leaving Kaiser is making a bigger decision than they may realize &mdash; walking away can mean forfeiting the entire pension. If a client is within a year of the 5-year cliff, that timing belongs in the conversation.</p>
+  </div>
+</section>
+
+<section class="block" id="formula">
+  <div class="pn">Section 03 · The Pension</div>
+  <h2>The pension formula</h2>
+  <p class="lead">This is the single most important concept in the pension. Nearly every Kaiser group uses the <strong>same three-part formula</strong> &mdash; only the multiplier changes from one contract to the next.</p>
+  <div class="formula">
+    <div class="fbox"><span class="ft">Plan multiplier</span><span class="fv">1.2% &ndash; 1.5% by group</span></div>
+    <div class="fop">&times;</div>
+    <div class="fbox alt"><span class="ft">Highest 5-yr average</span><span class="fv">Final Avg Monthly Comp</span></div>
+    <div class="fop">&times;</div>
+    <div class="fbox ghost"><span class="ft">Whole + partial years</span><span class="fv">Credited Service</span></div>
+    <div class="fop">=</div>
+    <div class="fbox" style="background:var(--ink)"><span class="ft">Result</span><span class="fv">Monthly Single Life pension at 65</span></div>
+  </div>
+  <p>Every other form of payment (joint-and-survivor, lump sum) is derived from this Single Life Annuity amount. So if you can reproduce this one line, you understand the client's pension.</p>
+
+  <h3>The multiplier is the variable that changes</h3>
+  <p>The multiplier is set by the client's contract or employee group. From the SPDs in the library, it ranges roughly as follows:</p>
+  <table>
+    <thead><tr><th>Multiplier</th><th>Representative groups</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1.5%</strong></td><td>Many Salaried/Non-Union groups, Executives, several Local contracts (e.g., CO Salaried, NW/MAS Salaried, HI Salaried)</td></tr>
+      <tr><td><strong>1.45%</strong></td><td>Many California union groups (CNA, UHW-West units, OPEIU/UFCW locals, ESC Local 20)</td></tr>
+      <tr><td><strong>1.4%</strong></td><td>Several Hawaii locals (ILWU 142, UNITE HERE 5), GA UFCW, some SoCal hourly groups</td></tr>
+      <tr><td><strong>1.3%</strong></td><td>Georgia Salaried &amp; Hourly</td></tr>
+      <tr><td><strong>1.2%</strong></td><td>Maui Health System groups, some &ldquo;Follower&rdquo; and trainee groups</td></tr>
+    </tbody>
+  </table>
+  <div class="callout gold">
+    <span class="tag">Use the plan selector</span>
+    <p>Pick the client's group from the <strong>&ldquo;Select plan / union&rdquo; dropdown</strong> in the left rail. The multiplier shown there feeds directly into the <a class="inline" href="#estimator">pension estimator</a> in Section 06. When the multiplier reads &ldquo;Confirm in SPD,&rdquo; the formula phrasing in that document differs (or it is a physician / cash-balance plan) &mdash; open the SPD and confirm before quoting a number.</p>
+  </div>
+
+  <h3>A worked example</h3>
+  <div class="callout">
+    <span class="tag blue">Worked example &mdash; the basic formula</span>
+    <p>Carolyn retires at age 65 with <strong>20 years</strong> of Credited Service. Her Final Average Monthly Compensation is <strong>$5,000</strong> and her group's multiplier is <strong>1.5%</strong>.<br>
+    1.5% &times; $5,000 = <strong>$75</strong> per year of service &rarr; $75 &times; 20 = <strong>$1,500/month</strong> as a Single Life Annuity beginning at age 65.</p>
+  </div>
+
+  <div class="callout warn">
+    <span class="tag">Two wrinkles that change the number</span>
+    <p><strong>1. Blended multipliers.</strong> Some contracts changed multipliers over time. For example, one UFCW local uses 1.45% today but calculates pre-November-2009 service at 1.5%. Long-tenured clients can have <em>two rates stitched together</em>.</p>
+    <p style="margin-top:8px"><strong>2. Pension offsets.</strong> If a client earned Credited Service under more than one KP plan (or a Joint Labor-Management Trust), the age-65 benefit is <strong>offset</strong> for the overlapping service so it is not counted twice. Employees who transferred between KP regions or entities, or from Group Health Cooperative in Washington, frequently have an offset. Always check.</p>
+  </div>
+
+  <div class="callout gold">
+    <span class="tag">Don't confuse these plan types</span>
+    <p>A few groups do <strong>not</strong> use the standard multiplier formula: the <strong>Colorado Permanente Medical Group (CPMG)</strong> physician plan is a <strong>cash balance</strong> plan (a hypothetical account, not a FAMC formula), and <strong>The Permanente Medical Group (TPMG)</strong> physicians have their own multi-plan structure. The standalone <strong>Stationary Engineers Local 39</strong> pension is a <strong>multiemployer (Taft-Hartley)</strong> plan, not a KP supplement. When the selector flags one of these, throw out the standard formula and read that plan on its own terms.</p>
+  </div>
+</section>
+
+<section class="block" id="famc">
+  <div class="pn">Section 04</div>
+  <h2>Final Average Monthly Compensation (FAMC)</h2>
+  <p>FAMC is the &ldquo;salary&rdquo; number in the formula, and it is more specific than clients expect. It is <strong>not</strong> last year's W-2.</p>
+  <div class="steps">
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Start with the monthly compensation rate</strong><p>The rate of base pay for the first compensated hour of each month, multiplied by 173.33 (the standard work hours in a month). It is a rate of base pay &mdash; not overtime, bonuses, or shift differentials.</p></div></div>
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Look back over the last 120 months</strong><p>The plan examines the client's last 10 years of monthly compensation rates.</p></div></div>
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Take the highest 60 consecutive months</strong><p>The best consecutive 5-year stretch (usually the most recent) is averaged. Fewer than 60 months of service? It averages all months worked.</p></div></div>
+  </div>
+  <div class="callout">
+    <span class="tag blue">Why this matters for advice</span>
+    <p>Because FAMC is a <strong>base-pay rate</strong> average, a client's huge final-year of overtime does <em>not</em> inflate the pension &mdash; only base-rate raises and promotions do. And because it is the <strong>highest</strong> 5 years, a client who steps down to a lower-paid or part-time role late in their career usually does <em>not</em> hurt the pension, since the earlier, higher-rate years still count. That can make a phased, part-time glide path into retirement far more attractive than clients assume.</p>
+  </div>
+  <p class="small">The IRS caps the annual pay that can be counted ($330,000 in 2023; indexed and higher in later years) and caps the total annual pension the plan can pay. High earners and physicians can hit these ceilings &mdash; confirm current limits with the KPRC.</p>
+</section>
+
+<section class="block" id="early">
+  <div class="pn">Section 05</div>
+  <h2>Early retirement &amp; the Rule of 75</h2>
+  <p class="lead">This is where advisors most often catch costly client misconceptions. When a client can start the pension &mdash; and how much of it is cut for starting early &mdash; turns on age and Years of Service.</p>
+
+  <h3>When the pension can begin</h3>
+  <table>
+    <thead><tr><th>Type</th><th>Requirement</th><th>Effect on amount</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Normal Retirement</strong></td><td>Age 65</td><td>Full, unreduced benefit</td></tr>
+      <tr><td><strong>Early Retirement</strong></td><td>Age 55 with 15 Years of Service, <em>or</em> age + Years of Service &ge; 75 (the &ldquo;Rule of 75&rdquo;)</td><td>Reduced if started before 65 (see table)</td></tr>
+      <tr><td><strong>Deferred Vested</strong></td><td>Vested (5 yrs) but leaves before qualifying for Early/Normal</td><td>Usually starts at 65; reduced if started earlier and eligible</td></tr>
+      <tr><td><strong>In-Service / Postponed</strong></td><td>Still working at/after 65</td><td>Actuarially adjusted; may start while employed</td></tr>
+    </tbody>
+  </table>
+
+  <h3>The early-commencement reduction</h3>
+  <p>If a client qualifies for Early Retirement but starts the pension before age 65, the monthly amount is reduced based on their age when payments begin. A representative schedule (from the Northern California Salaried SPD) looks like this:</p>
+  <table class="v-lines">
+    <thead><tr><th>Age payments begin</th><th class="text-center">% of the age-65 benefit</th></tr></thead>
+    <tbody>
+      <tr><td>65</td><td class="num text-center">100%</td></tr>
+      <tr><td>63</td><td class="num text-center">94%</td></tr>
+      <tr><td>62</td><td class="num text-center">91%</td></tr>
+      <tr><td>60</td><td class="num text-center">85%</td></tr>
+      <tr><td>59</td><td class="num text-center">80%</td></tr>
+      <tr><td>58</td><td class="num text-center">75%</td></tr>
+      <tr><td>57</td><td class="num text-center">70%</td></tr>
+      <tr><td>56</td><td class="num text-center">65%</td></tr>
+      <tr><td>55</td><td class="num text-center">60%</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Ages in between are interpolated &mdash; e.g., retiring at 62&frac12; is about 92.5%. Exact reduction factors vary by SPD and contract; this schedule is representative, not universal. Confirm the client's own factors with the KPRC.</p>
+
+  <div class="callout warn">
+    <span class="tag">The trap: the reduction is steep, and permanent</span>
+    <p>Starting the pension at 55 instead of 65 can cut it by <strong>40%</strong> &mdash; for life. Many clients see &ldquo;I'm eligible to retire at 55&rdquo; and hear &ldquo;I get my full pension at 55.&rdquo; Those are very different statements. Eligibility to <em>start</em> is not the same as an <em>unreduced</em> benefit.</p>
+  </div>
+  <div class="callout warn">
+    <span class="tag">The Rule of 75 is a sum, but read the fine print</span>
+    <p>Unlike some employers' rigid age/service pairs, Kaiser's Early Retirement gate genuinely is <strong>age + Years of Service &ge; 75</strong> (e.g., 55 + 20, 58 + 17, 60 + 15). Meeting it opens the door to start early &mdash; but the early-commencement reduction still applies for every year before 65 unless the client waits. The Rule of 75 controls <em>eligibility to start early</em>; the age table controls <em>how much is cut</em>.</p>
+  </div>
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>When a client is <strong>close to a milestone</strong> &mdash; the 5-year vesting cliff, the 15th year of service, or an age where the reduction eases sharply &mdash; a few more months of work can be worth tens of thousands in lifetime income. Mapping the client's exact age and service against these rules is one of the highest-leverage things you do. Use the estimator next to put dollars on it.</p>
+  </div>
+</section>
+
+<section class="block" id="estimator">
+  <div class="pn">Section 06 · Interactive</div>
+  <h2>Pension estimator</h2>
+  <p>Enter a client's numbers to see the unreduced age-65 pension, the early-commencement reduction if they start before 65, the reduced monthly amount, and whether they satisfy the Early Retirement / Rule of 75 gate. Selecting a plan in the left-rail dropdown sets the multiplier automatically; you can also override it here.</p>
+
+  <div class="calc">
+    <div class="row">
+      <label for="cMult">Plan multiplier</label>
+      <select id="cMult">
+        <option value="0.015">1.5%</option>
+        <option value="0.0145">1.45%</option>
+        <option value="0.014">1.4%</option>
+        <option value="0.013">1.3%</option>
+        <option value="0.012">1.2%</option>
+      </select>
+    </div>
+    <div class="row">
+      <label for="cFamc">Final Average Monthly Compensation ($/month)</label>
+      <input type="number" id="cFamc" min="0" max="30000" step="100" value="5000">
+    </div>
+    <div class="row">
+      <label for="cSvc">Years of Credited Service</label>
+      <input type="number" id="cSvc" min="0" max="50" step="1" value="20">
+    </div>
+    <div class="row">
+      <label for="cAge">Age when payments begin</label>
+      <input type="number" id="cAge" min="50" max="75" step="1" value="60">
+    </div>
+
+    <div id="statusBanner"></div>
+    <div class="results" id="resCards"></div>
+    <div class="note" id="calcNote"></div>
+  </div>
+
+  <div class="callout warn">
+    <span class="tag">Read this before relying on the output</span>
+    <p>This tool models the <strong>standard KP multiplier formula</strong> and the representative early-commencement reduction schedule above. It is an educational estimate only. It does <em>not</em> model cash-balance plans (CPMG), physician plans (TPMG), the Local 39 multiemployer pension, pension offsets, blended multipliers, unused-sick-leave credit, or joint-and-survivor reductions. It uses completed whole years. <strong>Always confirm a client's actual figures with the KPRC and the controlling SPD.</strong></p>
+  </div>
+</section>
+
+<section class="block" id="payment">
+  <div class="pn">Section 07</div>
+  <h2>How the pension gets paid</h2>
+  <p>At retirement the client chooses a <strong>form of payment</strong>. The choice is permanent &mdash; once payments begin it cannot be changed &mdash; so this is a decision to get right the first time.</p>
+
+  <div class="compare">
+    <div class="opt">
+      <h4>Single Life Annuity</h4>
+      <div class="who">Covers one lifetime</div>
+      <ul>
+        <li class="pro">Highest monthly payment</li>
+        <li class="pro">Standard form if unmarried</li>
+        <li class="con">Stops at death &mdash; nothing for a survivor</li>
+        <li class="con">No inflation adjustment</li>
+        <li class="con">Taxable as ordinary income</li>
+      </ul>
+    </div>
+    <div class="opt">
+      <h4>Joint &amp; Survivor (50 / 66&#8532; / 75%)</h4>
+      <div class="who">Covers two lifetimes</div>
+      <ul>
+        <li class="pro">Continues a % to spouse/partner after death</li>
+        <li class="pro">50% J&amp;S is the default if married</li>
+        <li class="con">Lower monthly payment than single life</li>
+        <li class="con">Beneficiary is locked once payments begin</li>
+        <li class="con">Taxable as ordinary income</li>
+      </ul>
+    </div>
+    <div class="opt">
+      <h4>Lump Sum</h4>
+      <div class="who">One-time payout</div>
+      <ul>
+        <li class="pro">Rollable to a traditional or Roth IRA</li>
+        <li class="pro">Investable &amp; inheritable</li>
+        <li class="con">Longevity &amp; market risk shift to the client</li>
+        <li class="con">Subject to RMDs later</li>
+        <li class="con">Direct payout triggers 20% withholding</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout gold">
+    <span class="tag">Defaults &amp; spousal consent</span>
+    <p>If the client is married, federal law makes the <strong>50% Joint &amp; Survivor annuity the default</strong>, and the spouse is entitled to it. Electing anything else &mdash; single life, a different J&amp;S percentage, or a lump sum &mdash; requires <strong>written, notarized spousal consent</strong> (generally within 90 days before payments begin). If unmarried, the default is the Single Life Annuity.</p>
+  </div>
+
+  <div class="lens">
+    <span class="tag">The advisor's lens: annuity vs. lump sum</span>
+    <p>This is the marquee pension decision. The annuity is a <strong>longevity hedge</strong> with a guaranteed floor and no market risk; the lump sum offers <strong>control, growth potential, flexibility, and a legacy asset</strong> but transfers investment and longevity risk to the client. Weigh the client's health and family longevity, other guaranteed income, the survivor's own resources, legacy goals, and the annuity's implied payout rate versus what a diversified portfolio could reasonably support. There is no universal right answer &mdash; but there is a right answer for this client.</p>
+  </div>
+  <div class="callout">
+    <span class="tag blue">Tax mechanic to know</span>
+    <p>A lump sum paid directly to the client triggers a mandatory <strong>20% federal withholding</strong>. A <strong>direct rollover</strong> to an IRA or other eligible plan avoids withholding and preserves tax deferral &mdash; usually the cleaner path when a lump sum is chosen.</p>
+  </div>
+</section>
+
+<section class="block" id="savings">
+  <div class="pn">Section 08 · The Savings Plans</div>
+  <h2>The TSA 403(b) &amp; Supplemental Savings</h2>
+  <p>The defined-contribution side, recordkept by <strong>Vanguard</strong>. There are two moving parts: the money the <em>employee</em> puts in (the TSA) and, for many groups, money the <em>employer</em> puts in (the Supplemental Savings &amp; Retirement Plan).</p>
+
+  <div class="cols">
+    <div class="card" style="border-top:4px solid var(--blue)">
+      <h4>Tax-Sheltered Annuity (TSA) &mdash; a 403(b)</h4>
+      <p>The employee's own savings plan. Eligible from hire, regardless of schedule. New hires are <strong>auto-enrolled at 2% pre-tax</strong>, auto-escalating 1%/year up to 6%, invested in the plan's default (QDIA) unless the client chooses otherwise. Contributions can run 1&ndash;75% of pay up to the IRS limit, pre-tax and/or Roth.</p>
+    </div>
+    <div class="card" style="border-top:4px solid var(--gold)">
+      <h4>Supplemental Savings &amp; Retirement Plan (SSRP)</h4>
+      <p>Employer-funded. Where offered (e.g., the Salaried group), Kaiser automatically contributes a set percentage of eligible pay (<strong>5% in the Salaried SPD</strong>) with <strong>no employee contribution required</strong>, and the employee is <strong>100% vested</strong>. This is free retirement money layered on top of the pension.</p>
+    </div>
+  </div>
+  <div class="callout warn">
+    <span class="tag">Confirm the specifics per group</span>
+    <p>Whether a group gets the SSRP, the exact employer percentage, any matching, Roth availability, and the investment lineup are governed by the <strong>savings-plan SPD and the current collective bargaining agreement</strong>. Some union groups instead participate in a jointly-administered trust. Confirm each client's plan in their Vanguard account before building a strategy.</p>
+  </div>
+
+  <h3>The 45-day and 90-day windows</h3>
+  <p>Auto-enrollment is reversible, briefly. A newly enrolled employee has <strong>45 days from hire</strong> to opt out (or change the rate, elect Roth, or opt out of auto-escalation), and <strong>90 days from the first deduction</strong> to cancel and have auto-enrollment contributions refunded. After that, participation continues until the client changes it.</p>
+
+  <h3>Pre-tax vs. Roth: a career-stage decision</h3>
+  <p>Whether a client should direct 403(b) contributions to pre-tax or Roth turns largely on <strong>their tax rate now versus their expected tax rate when the money comes out</strong>. Career stage is usually the best proxy.</p>
+  <div class="cols">
+    <div class="card" style="border-top:4px solid var(--good)">
+      <h4>Early career / lower-earning years &rarr; lean Roth</h4>
+      <p>A younger or lower-paid employee is often in a <strong>low bracket</strong>, so a pre-tax deduction is worth little. Paying tax now at a low rate and letting decades of growth come out tax-free is frequently the stronger trade. Roth dollars also do not add to MAGI in retirement, which helps with future IRMAA and Social Security taxation.</p>
+    </div>
+    <div class="card" style="border-top:4px solid var(--blue)">
+      <h4>Peak-earning years &rarr; lean pre-tax</h4>
+      <p>A senior employee at the top of the scale may be in a <strong>high bracket</strong> where the pre-tax deduction is genuinely valuable. Deferring now and drawing later &mdash; potentially in lower-income early-retirement years before the pension, Social Security, and RMDs stack up &mdash; can lower the lifetime tax bill.</p>
+    </div>
+  </div>
+  <p class="small">The Roth 403(b) has its own rules: qualified tax-free withdrawals require the account to be 5+ years old <em>and</em> the client to be 59&frac12; (or disabled/deceased). In-plan Roth conversions are available but create taxable income in the conversion year &mdash; and the tax must be paid from outside the plan.</p>
+
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>Farther can manage these Vanguard-held accounts and advise on allocation. Before optimizing anything fancier, make sure the basics are working: the client is capturing any employer contribution, contributing at a rate that fits their goals (not just the 6% auto-escalation ceiling), and invested appropriately rather than sitting in the default fund by inertia. The 403(b) is where ongoing investment management lives &mdash; the natural complement to the pension's guaranteed income.</p>
+  </div>
+</section>
+
+<section class="block" id="retiree-med">
+  <div class="pn">Section 09 · Advisor Toolkit</div>
+  <h2>Retiree medical &amp; other post-employment benefits</h2>
+  <p>For a client retiring before 65, health coverage is often the single biggest financial question &mdash; bigger than the pension math. Several KP SPDs describe post-employment benefits that sit alongside the pension.</p>
+  <div class="cols">
+    <div class="card">
+      <h4>Modified Retiree Medical Benefit</h4>
+      <p>Many groups describe a retiree medical benefit with its own age-and-service eligibility rules, separate from the pension. Availability, cost-sharing, and whether any subsidy applies vary widely by region and contract, and have been reduced for newer hires. Confirm each client's eligibility in the governing health-and-welfare SPD.</p>
+    </div>
+    <div class="card">
+      <h4>Retiree dental &amp; life insurance</h4>
+      <p>Some groups extend retiree dental coverage and a reduced retiree life insurance benefit. These are modest but real &mdash; worth confirming so a client does not double-buy coverage they already have.</p>
+    </div>
+  </div>
+  <div class="callout gold">
+    <span class="tag">Why the pre-65 gap matters most</span>
+    <p>A client who retires before <strong>age 65 is not yet Medicare-eligible</strong>. Individual coverage in that gap can run well over $1,000&ndash;$2,000/month per person. Even unsubsidized access to a group retiree plan can beat the open market, and where a subsidy still applies it is worth materially more. A client who leaves a few months short of a retiree-medical eligibility milestone can lose access entirely &mdash; often a six-figure decision. Map it before they give notice.</p>
+  </div>
+  <div class="callout warn">
+    <span class="tag">Verify: don't assume</span>
+    <p>Retiree medical eligibility and subsidies are governed by the <strong>separate health-and-welfare SPD and the current bargaining agreement</strong>, not the pension section, and they change over time. Confirm the client's specific situation before promising anything.</p>
+  </div>
+</section>
+
+<section class="block" id="irmaa">
+  <div class="pn">Section 10</div>
+  <h2>IRMAA &amp; Roth planning</h2>
+  <h3>Coordinating pension &amp; savings income with IRMAA in mind</h3>
+  <p>Once a client reaches Medicare, their premiums are no longer flat. The <strong>Income-Related Monthly Adjustment Amount (IRMAA)</strong> adds a surcharge to Medicare Part B and Part D premiums when modified adjusted gross income (MAGI) crosses a threshold. Pension income, 403(b) withdrawals, and Roth conversions all feed MAGI, so how a client sequences distributions directly drives what they pay for Medicare.</p>
+  <table>
+    <thead><tr><th>Feature</th><th>What it means for planning</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Two-year lookback</strong></td><td>This year's premium is set by MAGI from two years ago. A distribution or conversion today shows up in premiums ~2 years later &mdash; plan the income, then watch the downstream year.</td></tr>
+      <tr><td><strong>Cliff, not a ramp</strong></td><td>Crossing a threshold by even $1 triggers the full surcharge for that tier &mdash; no phase-in. The dollar that puts a client over can carry a very high effective marginal cost.</td></tr>
+      <tr><td><strong>Per person</strong></td><td>For a married couple, both Medicare-enrolled spouses pay the surcharge once joint MAGI crosses a tier.</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Because the thresholds and surcharge amounts change yearly, always pull the current figures rather than a remembered number: <a class="inline" href="https://www.medicare.gov/basics/costs/medicare-costs" target="_blank" rel="noopener">medicare.gov: Medicare costs &amp; IRMAA</a>.</p>
+
+  <h3>Roth conversions with brackets and IRMAA in view</h3>
+  <p>Converting pre-tax dollars to Roth means voluntarily recognizing income now to buy tax-free growth and future MAGI control. The window that often makes this attractive for KP clients is the <strong>gap between retiring and the onset of Social Security and required minimum distributions</strong> &mdash; a stretch of unusually low taxable income, especially for someone who retired early.</p>
+  <div class="callout gold">
+    <span class="tag">How to size a conversion</span>
+    <p>The disciplined approach is to <strong>&ldquo;fill the bracket&rdquo;</strong>: convert just enough to use up a low or moderate tax bracket without spilling into the next one &mdash; and, once the client is within two years of Medicare or already enrolled, without crossing the next IRMAA tier. Model the conversion's MAGI impact <strong>two years forward</strong> for the IRMAA effect, not just the current-year tax.</p>
+  </div>
+  <div class="callout warn">
+    <span class="tag">Not advice: a framework</span>
+    <p>Conversion and contribution strategy depend on the individual's full tax picture, state taxes, legacy goals, and assumptions about future rates. Use these as factors to evaluate with the client and their tax professional, not as a default recommendation. Farther advisors do not provide tax advice.</p>
+  </div>
+</section>
+
+<section class="block" id="strategy">
+  <div class="pn">Section 11</div>
+  <h2>Strategy playbook</h2>
+  <p>The recurring, high-value decisions where a Kaiser client benefits most from advice.</p>
+  <div class="steps">
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Identify the exact plan</strong><p>Use the left-rail selector to pin down the client's group, region, and multiplier. Confirm it against their SPD &mdash; and flag the exceptions (CPMG cash balance, TPMG physician plans, Local 39 multiemployer).</p></div></div>
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Map age &amp; service against the milestones</strong><p>Check vesting (5 yrs), Early Retirement (55 + 15, or Rule of 75), and the ages where the reduction eases. Identify the nearest milestone and what reaching it is worth.</p></div></div>
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Reconstruct the pension</strong><p>Multiplier &times; FAMC &times; Credited Service. Watch for blended multipliers, pension offsets from prior KP service, and unused-sick-leave credit. Verify with the KPRC.</p></div></div>
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Run annuity vs. lump sum</strong><p>Compare the guaranteed annuity against a prudent withdrawal from the rolled-over lump sum, factoring health, longevity, spouse, and legacy. Document the reasoning.</p></div></div>
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Choose the survivor structure deliberately</strong><p>Single life vs. 50/66&#8532;/75% J&amp;S is permanent and needs spousal consent. Align it with life insurance and the survivor's own income.</p></div></div>
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Solve the pre-65 healthcare gap</strong><p>Confirm retiree-medical eligibility before the client gives notice. This is frequently the highest-stakes number in the whole plan.</p></div></div>
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Optimize the Vanguard accounts</strong><p>Confirm employer contributions are captured, set a contribution rate that fits the goal (not just the auto-escalation ceiling), match pre-tax/Roth to the client's bracket, and fix default-fund inertia.</p></div></div>
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Sequence income &amp; manage MAGI</strong><p>Coordinate pension start date, Social Security claiming, and 403(b) withdrawals. Size withdrawals and Roth conversions to fill the bracket without crossing the next IRMAA tier, projecting MAGI two years forward.</p></div></div>
+  </div>
+  <div class="callout gold">
+    <span class="tag">First-meeting question set</span>
+    <p>Which region and employee group/union? · When did you start at Kaiser? · Current age and Years of Service? · Married, and what is your spouse's own income/coverage? · Target retirement age? · Health and longevity outlook? · Any prior Kaiser or Group Health service (offsets)? · What other savings and Social Security expectations do you have? These answers drive every recommendation above.</p>
+  </div>
+</section>
+
+<section class="block" id="protections">
+  <div class="pn">Section 12</div>
+  <h2>Protections &amp; rules to know</h2>
+  <div class="cols">
+    <div class="card">
+      <h4>PBGC insurance</h4>
+      <p>The defined-benefit pension is federally insured by the Pension Benefit Guaranty Corporation up to legal limits. Taking a lump sum forfeits this guarantee.</p>
+    </div>
+    <div class="card">
+      <h4>QDRO (divorce)</h4>
+      <p>A Qualified Domestic Relations Order can assign part of the pension or savings account to a former spouse. Benefits otherwise cannot be assigned, pledged, or reached by creditors.</p>
+    </div>
+    <div class="card">
+      <h4>Spousal rights in the savings plan</h4>
+      <p>Under the savings plans a spouse is generally entitled to 50% of the account at death unless a notarized waiver is on file. Special rules apply to married participants under age 35. Beneficiary designations live on Vanguard's system.</p>
+    </div>
+    <div class="card">
+      <h4>Pension offsets / no double credit</h4>
+      <p>Service and pay cannot count twice across KP plans. Clients who moved between KP regions, entities, or from Group Health Cooperative may see an offset that reduces the new-plan benefit for overlapping service.</p>
+    </div>
+    <div class="card">
+      <h4>Required minimum distributions</h4>
+      <p>Postponed pensions and savings accounts must generally begin by the federal RMD deadline. Coordinate RMDs with the client's broader tax and IRMAA plan.</p>
+    </div>
+    <div class="card">
+      <h4>Rehire &amp; transfer rules</h4>
+      <p>Rehired employees and inter-regional transfers are governed by the national Inter-Regional Transfer policy. Prior service may or may not count &mdash; always review the relevant plan document.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="glossary">
+  <div class="pn">Section 13</div>
+  <h2>Glossary</h2>
+  <dl class="gloss">
+    <dt>KPRP</dt><dd>Kaiser Permanente Retirement Plan &mdash; the master, qualified defined-benefit pension plan, delivered through many region- and union-specific supplements.</dd>
+    <dt>Plan multiplier</dt><dd>The percentage (1.2%&ndash;1.5% by group) applied to FAMC and Credited Service in the pension formula.</dd>
+    <dt>Final Average Monthly Compensation (FAMC)</dt><dd>The average of the highest 60 consecutive months (of the last 120) of the monthly base-pay rate (hourly base &times; 173.33).</dd>
+    <dt>Credited Service</dt><dd>Service that sizes the benefit: a full year at 2,000+ compensated hours, proportional below that; can include unused-sick-leave credit.</dd>
+    <dt>Year of Service</dt><dd>A calendar year with 1,000+ Hours of Service; used for participation, vesting, and early-retirement eligibility.</dd>
+    <dt>Hour of Service</dt><dd>Any compensated hour, including sick leave, vacation, holidays, and paid leave.</dd>
+    <dt>Vesting</dt><dd>The point the pension is the employee's to keep &mdash; 5 Years of Service (or age 65 while employed). TSA employee money is always vested.</dd>
+    <dt>Normal Retirement</dt><dd>Age 65 &mdash; the pension is payable unreduced.</dd>
+    <dt>Early Retirement</dt><dd>Age 55 with 15 Years of Service, or age + service &ge; 75 (&ldquo;Rule of 75&rdquo;); benefit reduced if started before 65.</dd>
+    <dt>Deferred Vested Pension</dt><dd>The benefit for a vested employee who leaves before qualifying for Early/Normal Retirement; generally starts at 65.</dd>
+    <dt>Single Life Annuity</dt><dd>The base form of payment &mdash; a monthly benefit for the retiree's lifetime, with nothing continuing to a survivor.</dd>
+    <dt>Joint &amp; Survivor (J&amp;S)</dt><dd>An annuity that continues 50%, 66&#8532;%, or 75% to a survivor. The 50% J&amp;S is the default for married participants.</dd>
+    <dt>Pension Offset</dt><dd>A reduction that prevents the same service from being counted under two KP plans (or a Group Health / trust plan).</dd>
+    <dt>TSA</dt><dd>Tax-Sheltered Annuity &mdash; Kaiser's 403(b) employee savings plan at Vanguard; auto-enroll 2% escalating to 6%; pre-tax and/or Roth.</dd>
+    <dt>SSRP</dt><dd>Supplemental Savings &amp; Retirement Plan &mdash; employer-funded defined-contribution account (e.g., 5% of pay in the Salaried SPD); 100% vested.</dd>
+    <dt>Cash Balance Plan</dt><dd>An account-style defined-benefit plan (used by CPMG physicians) &mdash; a hypothetical balance rather than a FAMC formula.</dd>
+    <dt>KPRC</dt><dd>Kaiser Permanente Retirement Center &mdash; the pension administrator; the authoritative source for a client's actual pension figures.</dd>
+    <dt>PBGC</dt><dd>Pension Benefit Guaranty Corporation &mdash; federal insurer of the defined-benefit pension.</dd>
+    <dt>QDRO</dt><dd>Qualified Domestic Relations Order &mdash; a court order splitting a benefit in divorce.</dd>
+    <dt>SPD</dt><dd>Summary Plan Description &mdash; the controlling plain-language plan document; it governs in any conflict with this guide.</dd>
+    <dt>IRMAA</dt><dd>Income-Related Monthly Adjustment Amount &mdash; an income-based surcharge on Medicare Part B and D premiums, set by MAGI from two years prior.</dd>
+    <dt>MAGI</dt><dd>Modified adjusted gross income &mdash; drives IRMAA tiers; fed by pension income, 403(b) withdrawals, and Roth conversions.</dd>
+  </dl>
+</section>
+
+<section class="block" id="contacts">
+  <div class="pn">Section 14</div>
+  <h2>Contacts &amp; sources</h2>
+  <h4>For clients: administrators</h4>
+  <div class="contacts">
+    <div class="contact"><div class="cn">Kaiser Permanente Retirement Center (KPRC)</div><div class="cd">Pension administration &amp; commencement<br>www.ibenefitcenter.com/kp</div></div>
+    <div class="contact"><div class="cn">Vanguard (TSA &amp; Supplemental Savings)</div><div class="cd">www.vanguard.com · 800-523-1188<br>Mon&ndash;Fri, 5:30 a.m.&ndash;6 p.m. Pacific</div></div>
+    <div class="contact"><div class="cn">National HR Service Center (NHRSC)</div><div class="cd">877-4KP-HRSC (877-457-4772)<br>kp.org/myhr</div></div>
+    <div class="contact"><div class="cn">PBGC</div><div class="cd">pbgc.gov · 800-400-7242</div></div>
+  </div>
+
+  <h4>Farther Kaiser Focus Team</h4>
+  <div class="contacts">
+    <div class="contact"><div class="cn">Focus Team Lead</div><div class="cd">Add advisor name &amp; contact</div></div>
+    <div class="contact"><div class="cn">Wealth Advisor</div><div class="cd">Add advisor name &amp; contact</div></div>
+  </div>
+
+  <h4>Source documents (project library)</h4>
+  <p class="small">100 Kaiser Permanente Summary Plan Descriptions across 11 regions (Colorado, Executives, Georgia, Hawaii, IT, Maui Health System, Mid-Atlantic States, Northern California, Northwest, Southern California, Washington), each summarizing the health-and-welfare and retirement benefits for a specific salaried or union group. These SPDs are the controlling references; this guide summarizes their retirement provisions for training. Specific multipliers, factors, and limits vary by collective bargaining agreement and plan year.</p>
+</section>
+
+<div class="foot">
+  <div class="ftitle">Farther · Kaiser Permanente Focus Team, Advisor Field Guide</div>
+  <div>Built as an internal onboarding reference. Pair it with each client's KPRC pension statement, Vanguard account, and the controlling SPD before advising.</div>
+  <div class="disc">
+    This material is for internal educational and training use by Farther advisors. It is a simplified summary of complex plan provisions and is not legal, tax, or investment advice, nor a guarantee of any benefit. Plan terms are governed solely by the official plan documents and Summary Plan Descriptions, which control in any conflict. Benefit formulas, multipliers, factors, vesting schedules, early-retirement reductions, dollar limits, and savings-plan provisions vary by region, collective bargaining agreement, and plan year and change over time &mdash; always verify a client's actual figures with the Kaiser Permanente Retirement Center and the current SPD before making recommendations. The pension estimator output is an illustrative approximation only and does not model every plan type or adjustment.
+  </div>
+</div>
+
+</main>
+</div>
+
+<script>
+var PLANDATA={
+"Colorado_SPD_CO_CPMG_md":{r:"Colorado",l:"Physicians, Executives, and Podiatrists Colorado Permanente Medical Group",m:"Cash balance",cb:1},
+"Colorado_SPD_CO_L1_md":{r:"Colorado",l:"International Union of Operating Engineers, Local 1, AFL-CIO",m:"1.5%",cb:0},
+"Colorado_SPD_CO_L105_md":{r:"Colorado",l:"Service Employees International Union, Local 105",m:"",cb:0},
+"Colorado_SPD_CO_L7_MHW_md":{r:"Colorado",l:"United Food and Commercial Workers, Local 7 Mental Health Workers",m:"1.5%",cb:0},
+"Colorado_SPD_CO_L7_PHC_md":{r:"Colorado",l:"United Food and Commercial Workers, Local 7, Professional and Health Care Division",m:"1.5%",cb:0},
+"Colorado_SPD_CO_RES_md":{r:"Colorado",l:"Pharmacy Residents Colorado",m:"",cb:0},
+"Colorado_SPD_CO_SAL_md":{r:"Colorado",l:"Salaried Employees Colorado",m:"1.5%",cb:0},
+"Executives_SPD_EXECS_md":{r:"Executives",l:"Executives Kaiser Foundation Health Plan, Inc.",m:"1.5%",cb:0},
+"Georgia_SPD_GA_SAL_md":{r:"Georgia",l:"Salaried and Hourly Employees Georgia",m:"1.3%",cb:0},
+"Georgia_SPD_GA_UFCW_md":{r:"Georgia",l:"United Food and Commercial Workers (UFCW) Union, Local 1996",m:"1.4%",cb:0},
+"Hawaii_SPD_HI_L142_md":{r:"Hawaii",l:"International Longshore and Warehouse Union, Local 142",m:"1.4%",cb:0},
+"Hawaii_SPD_HI_L5_md":{r:"Hawaii",l:"UNITE HERE, Local 5, AFL-CIO Hawaii",m:"1.4%",cb:0},
+"Hawaii_SPD_HI_NUNE_md":{r:"Hawaii",l:"Non-Union Non-Exempt Hawaii",m:"1.4%",cb:0},
+"Hawaii_SPD_HI_HNA_md":{r:"Hawaii",l:"Hawaii Nurses Association Hawaii",m:"1.45%",cb:0},
+"Hawaii_SPD_HI_HNA_Followers_md":{r:"Hawaii",l:"Hawaii Nurses Association Followers Hawaii",m:"1.4%",cb:0},
+"Hawaii_SPD_HI_HNHP_md":{r:"Hawaii",l:"Hawaii Nurses and Healthcare Professionals (HNHP) Home Health Nurses",m:"1.45%",cb:0},
+"Hawaii_SPD_HI_L142_Followers_md":{r:"Hawaii",l:"International Longshore and Warehouse Union, Local 142 Followers",m:"1.4%",cb:0},
+"Hawaii_SPD_HI_NUHW_IBHS_md":{r:"Hawaii",l:"NUHW Integrated Behavioral Health and Inpatient Medical Social Workers",m:"1.45%",cb:0},
+"Hawaii_SPD_HI_SAL_md":{r:"Hawaii",l:"Salaried Employees and Resident Physicians Hawaii",m:"1.5%",cb:0},
+"Hawaii_SPD_HI_UNAC_RX_md":{r:"Hawaii",l:"UNAC United Pharmacists of Hawaii Hawaii",m:"1.5%",cb:0},
+"Hawaii_SPD_HI_UTHI_md":{r:"Hawaii",l:"UNAC United Therapists of Hawaii Hawaii",m:"1.5%",cb:0},
+"IT_SPD_GA_UFCW_md":{r:"IT",l:"United Food and Commercial Workers (UFCW) Union, Local 1996",m:"1.4%",cb:0},
+"IT_SPD_IT_DSW_md":{r:"IT",l:"Service Employees International Union, Desktop Support Workers",m:"1.5%",cb:0},
+"IT_SPD_KPWA_NONREP_md":{r:"IT",l:"Nonrepresented Employees (Program Offices & IT)",m:"",cb:0},
+"IT_SPD_POIT_INTERNS_md":{r:"IT",l:"Program Offices and Information Technology Interns",m:"1.5%",cb:0},
+"IT_SPD_POIT_md":{r:"IT",l:"Program Offices and Information Technology (POIT)",m:"1.5%",cb:0},
+"IT_SPD_SC_UHW_md":{r:"IT",l:"United Healthcare Workers West Moreno Valley Medical Center",m:"1.45%",cb:0},
+"Maui_Health_System_SPD_MHS_SPFPA_md":{r:"Maui Health System",l:"International Union, Security, Police and Fire Professionals of America",m:"1.2%",cb:0},
+"Maui_Health_System_SPD_MHS_UNAC_md":{r:"Maui Health System",l:"United Nurses Associations of California Union of Health Care Professionals",m:"1.2%",cb:0},
+"Maui_Health_System_SPD_MHS_UPW_md":{r:"Maui Health System",l:"United Public Workers, AFSCME, Local 646 AFL-CIO Maui Health System",m:"1.2%",cb:0},
+"Maui_Health_System_SPD_MHS_NUE_md":{r:"Maui Health System",l:"Nonrepresented Employees Maui Health System",m:"",cb:0},
+"Mid_Atlantic_States_SPD_MAS_L2_OPTRX_md":{r:"Mid Atlantic States",l:"Office and Professional Employees International Union, Local 2",m:"",cb:0},
+"Mid_Atlantic_States_SPD_MAS_SAL_md":{r:"Mid Atlantic States",l:"Salaried - Exempt and Non-Exempt Mid-Atlantic States",m:"1.5%",cb:0},
+"Mid_Atlantic_States_SPD_MAS_L2_md":{r:"Mid Atlantic States",l:"Office and Professional Employees International Union (OPEIU), Local 2, Washington D.C. & Baltimore",m:"1.45%",cb:0},
+"Mid_Atlantic_States_SPD_MAS_L400_L27_md":{r:"Mid Atlantic States",l:"United Food and Commercial Workers (UFCW), Local 400 and Local 27",m:"1.45%",cb:0},
+"Mid_Atlantic_States_SPD_MAS_L99_md":{r:"Mid Atlantic States",l:"International Union of Operating Engineers, Local 99-99A",m:"",cb:0},
+"Nor_Cal_SE39_Pension_SPD_eff_10_01_20_Local39_md":{r:"Nor Cal",l:"Stationary Engineers, Local 39 (Multiemployer Pension)",m:"",cb:0},
+"Nor_Cal_SPD_ESC_Clinical_Laboratory_Scientists_md":{r:"Nor Cal",l:"Engineers and Scientists of California, Local 20 Clinical Laboratory Scientists",m:"1.45%",cb:0},
+"Nor_Cal_SPD_NC_CNA_md":{r:"Nor Cal",l:"California Nurses Association Northern California",m:"1.45%",cb:0},
+"Nor_Cal_SPD_NC_FOLLOWERS_md":{r:"Nor Cal",l:"Non-Represented Followers Northern California",m:"1.2%",cb:0},
+"Nor_Cal_SPD_NC_GPP_md":{r:"Nor Cal",l:"The Guild for Professional Pharmacists Northern California",m:"1.45%",cb:0},
+"Nor_Cal_SPD_NC_Genetics_Counselors_md":{r:"Nor Cal",l:"Engineers and Scientists of California, Local 20 IFPTE AFL-CIO & CLC",m:"",cb:0},
+"Nor_Cal_SPD_NC_HE_md":{r:"Nor Cal",l:"United Healthcare Workers West Health Educators",m:"1.45%",cb:0},
+"Nor_Cal_SPD_NC_Home_Health_Therapists_md":{r:"Nor Cal",l:"Engineers and Scientists of California, Local 20, IFPTE AFL-CIO & CLC",m:"1.5%",cb:0},
+"Nor_Cal_SPD_NC_IBHS_md":{r:"Nor Cal",l:"National Union of Healthcare Workers (NUHW), Integrated Behavioral Health Services",m:"1.45%",cb:0},
+"Nor_Cal_SPD_NC_L20OPT_md":{r:"Nor Cal",l:"Engineers and Scientists of California, Local 20 IFPTE, AFL-CIO & CLC",m:"1.5%",cb:0},
+"Nor_Cal_SPD_NC_MHT_md":{r:"Nor Cal",l:"Mental Health Trainees Physical Therapy Specialty Projects",m:"1.2%",cb:0},
+"Nor_Cal_SPD_NC_OW_md":{r:"Nor Cal",l:"SEIU United Healthcare Workers West, Optical Unit Northern California",m:"1.45%",cb:0},
+"Nor_Cal_SPD_NC_RD_md":{r:"Nor Cal",l:"United Healthcare Workers West Registered Dietitians",m:"1.5%",cb:0},
+"Nor_Cal_SPD_NC_UHW_md":{r:"Nor Cal",l:"SEIU United Healthcare Workers West Northern California",m:"1.45%",cb:0},
+"Nor_Cal_SPD_NC_L29_md":{r:"Nor Cal",l:"Office and Professional Employees International Union, Local 29 AFL-CIO & CLC",m:"1.45%",cb:0},
+"Nor_Cal_SPD_NC_L39_md":{r:"Nor Cal",l:"International Union of Operating Engineers (IUOE) Stationary Engineers, Local 39, AFL-CIO",m:"",cb:0},
+"Nor_Cal_SPD_NC_MSW_md":{r:"Nor Cal",l:"United Healthcare Workers West Medical Social Workers",m:"1.45%",cb:0},
+"Nor_Cal_SPD_NC_POST_md":{r:"Nor Cal",l:"Physical/Occupational/Speech Therapists (POST)",m:"1.5%",cb:0},
+"Nor_Cal_SPD_NC_RES_md":{r:"Nor Cal",l:"Residents Northern California",m:"",cb:0},
+"Nor_Cal_SPD_NC_SAL_1_md":{r:"Nor Cal",l:"Salaried and Non-Union Non-Exempt Northern California",m:"1.5%",cb:0},
+"Nor_Cal_SPD_NC_SAL_md":{r:"Nor Cal",l:"Salaried and Non-Union Non-Exempt Northern California",m:"1.5%",cb:0},
+"Nor_Cal_SPD_NC_TPMG_1_md":{r:"Nor Cal",l:"Salaried and Non-Union Non-Exempt The Permanente Medical Group, Inc.",m:"",cb:0},
+"Nor_Cal_SPD_NC_TPMG_md":{r:"Nor Cal",l:"Salaried and Non-Union Non-Exempt The Permanente Medical Group, Inc.",m:"",cb:0},
+"Nor_Cal_SPD_TPMGRet123_1_md":{r:"Nor Cal",l:"TPMG Retirement Plans 1/2/3 (Physicians)",m:"",cb:0},
+"Nor_Cal_SPD_TPMGRet123_md":{r:"Nor Cal",l:"TPMG Retirement Plans 1/2/3 (Physicians)",m:"",cb:0},
+"Northwest_SPD_NW_5017DH_md":{r:"Northwest",l:"Oregon Federation of Nurses and Health Professionals, Dental Hygienists and Technical",m:"1.45%",cb:0},
+"Northwest_SPD_NW_5017PLP_md":{r:"Northwest",l:"Oregon Federation of Nurses and Health Professionals (OFNHP), Local 5017, Professionals",m:"1.5%",cb:0},
+"Northwest_SPD_NW_5017RN_md":{r:"Northwest",l:"Oregon Federation of Nurses and Health Professionals, Registered Nurses, Local 5017",m:"1.45%",cb:0},
+"Northwest_SPD_NW_GPP_md":{r:"Northwest",l:"The Guild for Professional Pharmacists Northwest",m:"1.45%",cb:0},
+"Northwest_SPD_NW_L701_md":{r:"Northwest",l:"International Union of Operating Engineers, Local 701",m:"",cb:0},
+"Northwest_SPD_NW_NUNE_md":{r:"Northwest",l:"Non-Union Non-Exempt Northwest",m:"1.2%",cb:0},
+"Northwest_SPD_NW_SAL_md":{r:"Northwest",l:"Salaried Northwest",m:"1.5%",cb:0},
+"Northwest_SPD_NW_L28_md":{r:"Northwest",l:"International Longshore & Warehouse Union (ILWU), Local 28, AFL-CIO",m:"1.45%",cb:0},
+"Northwest_SPD_NW_L49_md":{r:"Northwest",l:"Service Employees International Union (SEIU), Local 49",m:"1.45%",cb:0},
+"Northwest_SPD_NW_L555IMG_md":{r:"Northwest",l:"United Food and Commercial Workers (UFCW), Local 555 Imaging Services",m:"",cb:0},
+"Northwest_SPD_NW_L555RX_md":{r:"Northwest",l:"United Food and Commercial Workers (UFCW), Local 555 Non-Registered Drug Services",m:"",cb:0},
+"Northwest_SPD_NW_ONA_md":{r:"Northwest",l:"Oregon Nurses Association Northwest",m:"1.45%",cb:0},
+"SoCal_SPD_SC_CNA_LAMC_md":{r:"SoCal",l:"California Nurses Association (Inpatient/Home Health/Hospice RNs) LAMC",m:"1.45%",cb:0},
+"SoCal_SPD_SC_DASH_md":{r:"SoCal",l:"UNAC/UHCP Dietitians, Audiologists, Speech, and Health Educators",m:"1.45%",cb:0},
+"SoCal_SPD_SC_KPMWON_SCNSC_md":{r:"SoCal",l:"Kaiser Permanente Midwives / Wound Ostomy Nurses",m:"1.5%",cb:0},
+"SoCal_SPD_SC_KPNAA_md":{r:"SoCal",l:"Kaiser Permanente Nurse Anesthetists Association Southern California",m:"1.45%",cb:0},
+"SoCal_SPD_SC_L121_md":{r:"SoCal",l:"Service Employees International Union, Local 121 Southern California",m:"1.45%",cb:0},
+"SoCal_SPD_SC_PSWC_md":{r:"SoCal",l:"National Union of Healthcare Workers, Psych-Social Chapter",m:"",cb:0},
+"SoCal_SPD_SC_SAL_md":{r:"SoCal",l:"Non-Union Non-Exempt, Salaried, and Salaried Patient Care Providers",m:"1.5%",cb:0},
+"SoCal_SPD_SC_STIF_md":{r:"SoCal",l:"Students, Trainees, Interns, and Fellows Southern California",m:"1.4%",cb:0},
+"SoCal_SPD_SC_UHW_md":{r:"SoCal",l:"United Healthcare Workers West Moreno Valley Medical Center",m:"1.45%",cb:0},
+"SoCal_SPD_SC_UTSC_md":{r:"SoCal",l:"United Therapists of Southern California Southern California",m:"1.45%",cb:0},
+"SoCal_SPD_SCPMG_SAL_md":{r:"SoCal",l:"Non-Union Non-Exempt, Salaried, and Salaried Patient Care Providers",m:"1.5%",cb:0},
+"SoCal_SPD_SC_KPASCO_md":{r:"SoCal",l:"Kaiser Permanente Association of Southern California Optometrists",m:"1.5%",cb:0},
+"SoCal_SPD_SC_L166_md":{r:"SoCal",l:"International Brotherhood of Teamsters Local 166, AFL-CIO",m:"1.45%",cb:0},
+"SoCal_SPD_SC_L30_md":{r:"SoCal",l:"Office and Professional Employees International Union (OPEIU), Local 30 AFL-CIO, CLC",m:"1.45%",cb:0},
+"SoCal_SPD_SC_L501_md":{r:"SoCal",l:"International Union of Operating Engineers, Local 501, AFL-CIO",m:"",cb:0},
+"SoCal_SPD_SC_L7600_md":{r:"SoCal",l:"United Steelworks of America Local 7600, AFL-CIO-CLC",m:"",cb:0},
+"SoCal_SPD_SC_L770_md":{r:"SoCal",l:"United Food and Commercial Workers International Union (UFCW), Local 770 Kern County",m:"1.45%",cb:0},
+"SoCal_SPD_SC_NUH_md":{r:"SoCal",l:"Non-Union Hourly Employees Lifestyle Educators",m:"1.4%",cb:0},
+"SoCal_SPD_SC_PHARM_md":{r:"SoCal",l:"United Pharmacists of Southern California Southern California",m:"1.45%",cb:0},
+"SoCal_SPD_SC_RES_md":{r:"SoCal",l:"Residents Southern California",m:"1.5%",cb:0},
+"SoCal_SPD_SC_UFCW_B_md":{r:"SoCal",l:"United Food and Commercial Workers International Union (UFCW), Bakersfield",m:"1.45%",cb:0},
+"SoCal_SPD_SC_UFCW_RX_md":{r:"SoCal",l:"United Food and Commercial Workers (UFCW) Pharmacy",m:"",cb:0},
+"SoCal_SPD_SC_UNAC_md":{r:"SoCal",l:"United Nurses Association of California (UNAC/UHCP)",m:"1.45%",cb:0},
+"Washington_SPD_KPWA_NONREP_md":{r:"Washington",l:"Nonrepresented Employees (Program Offices & IT)",m:"",cb:0},
+"Washington_SPD_KPWA_OPEIU_md":{r:"Washington",l:"Office of Professional Employees International Union, Local 8",m:"",cb:0},
+"Washington_SPD_KPWA_SEIU_md":{r:"Washington",l:"Service Employees International Union (SEIU) Healthcare 1199NW",m:"",cb:0},
+"Washington_SPD_KPWA_UFCW_md":{r:"Washington",l:"United Food and Commercial Workers International Union, Local 3000",m:"",cb:0}
+};
+
+// ---- nav active state ----
+var links=[].slice.call(document.querySelectorAll('nav.side a.navitem'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+var obs=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting){
+      var id='#'+e.target.id;
+      links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')===id);});
+    }
+  });
+},{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(function(s){if(s)obs.observe(s);});
+
+// ---- plan selector -> planbar + estimator multiplier ----
+(function(){
+  var sel=document.getElementById('planSel');
+  var meta=document.getElementById('ppMeta');
+  var bar=document.getElementById('planbar');
+  var multSel=document.getElementById('cMult');
+  function setMult(m){
+    if(!m) return;
+    var opt=[].slice.call(multSel.options).filter(function(o){return Math.abs(parseFloat(o.value)-m)<1e-6;});
+    if(opt.length){multSel.value=opt[0].value; if(window.renderCalc)window.renderCalc();}
+  }
+  sel.addEventListener('change',function(){
+    var d=PLANDATA[sel.value];
+    if(!d){
+      bar.style.display='none';
+      meta.textContent='Choose a group to see its pension multiplier and region, and to set the estimator below.';
+      return;
+    }
+    var multTxt = d.cb ? 'Cash balance plan' : (d.m ? d.m : 'Confirm in SPD');
+    var typeTxt = d.cb ? 'Cash balance (not the standard formula)' : 'Defined-benefit (multiplier formula)';
+    document.getElementById('pbName').textContent=d.l;
+    document.getElementById('pbRegion').textContent=d.r;
+    document.getElementById('pbMult').textContent=multTxt;
+    document.getElementById('pbType').textContent=typeTxt;
+    bar.style.display='block';
+    meta.innerHTML='<b>'+d.r+'</b> &middot; Multiplier: <b>'+multTxt+'</b>';
+    if(!d.cb && d.m){ setMult(parseFloat(d.m)/100); }
+  });
+})();
+
+// ---- pension estimator ----
+(function(){
+  var multEl=document.getElementById('cMult');
+  var famcEl=document.getElementById('cFamc');
+  var svcEl=document.getElementById('cSvc');
+  var ageEl=document.getElementById('cAge');
+  if(!multEl) return;
+  var banner=document.getElementById('statusBanner');
+  var cards=document.getElementById('resCards');
+  var note=document.getElementById('calcNote');
+
+  // representative NCAL Salaried early-commencement schedule (whole ages)
+  var TABLE={65:100,64:97,63:94,62:91,61:88,60:85,59:80,58:75,57:70,56:65,55:60};
+  function reducFactor(age){
+    if(age>=65) return 100;
+    if(age<55) return null; // below early-retirement floor for the subsidized schedule
+    var lo=Math.floor(age), hi=Math.ceil(age);
+    if(lo===hi) return TABLE[lo];
+    var f=age-lo;
+    return TABLE[lo]+(TABLE[hi]-TABLE[lo])*f;
+  }
+  function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
+
+  function render(){
+    var mult=parseFloat(multEl.value);
+    var famc=parseFloat(famcEl.value)||0;
+    var svc=parseFloat(svcEl.value)||0;
+    var age=parseFloat(ageEl.value)||0;
+
+    var vested = svc>=5;
+    var earlyElig = (age>=55 && svc>=15) || (age+svc>=75);
+    var unreduced = mult*famc*svc; // monthly at 65
+
+    // ---- status banner ----
+    if(!vested){
+      banner.className='status-banner notmet';
+      banner.innerHTML='&times; Not yet vested'+
+        '<span class="sb-sub">Fewer than 5 Years of Service and under age 65 &mdash; the pension is generally forfeited if the client leaves now. Confirm Years of Service.</span>';
+    } else if(age>=65){
+      banner.className='status-banner met';
+      banner.innerHTML='&check; Normal Retirement (age 65+)'+
+        '<span class="sb-sub">Vested and at Normal Retirement Age &mdash; the pension is payable unreduced.</span>';
+    } else if(earlyElig){
+      var via = (age+svc>=75) ? ('age + service = '+(age+svc)+' (Rule of 75)') : ('age 55 with '+svc+' years of service');
+      banner.className='status-banner met';
+      banner.innerHTML='&check; Qualifies for Early Retirement'+
+        '<span class="sb-sub">Eligible via '+via+'. The benefit is reduced for starting before age 65 (see below).</span>';
+    } else {
+      banner.className='status-banner notmet';
+      banner.innerHTML='&times; Vested, but not yet Early-Retirement eligible'+
+        '<span class="sb-sub">Needs age 55 + 15 years, or age + service &ge; 75. As a Deferred Vested pension this generally starts at age 65.</span>';
+    }
+
+    // ---- result cards ----
+    cards.innerHTML='';
+    function mk(cls,label,val,desc){
+      var d=document.createElement('div'); d.className='rcard '+cls;
+      d.innerHTML='<div class="rlabel">'+label+'</div><div class="rval">'+val+'</div><div class="rdesc">'+desc+'</div>';
+      cards.appendChild(d);
+    }
+    mk('neutral','Unreduced pension at 65', money(unreduced)+'/mo',
+       (mult*100).toFixed(2).replace(/\.?0+$/,'')+'% &times; '+money(famc)+' &times; '+svc+' yrs, as a Single Life Annuity.');
+
+    var f=reducFactor(age);
+    if(age>=65){
+      mk('good','Early-commencement reduction','None','At/after age 65 the benefit is unreduced.');
+      mk('good','Estimated monthly pension', money(unreduced)+'/mo','Single Life Annuity at age '+age+'.');
+    } else if(f===null){
+      mk('warn','Early-commencement reduction','Below age 55','This schedule starts at age 55. A deferred vested benefit before 55 is not typical &mdash; confirm the SPD.');
+      mk('neutral','Estimated monthly pension','Verify','Confirm the earliest commencement age and factors for this plan.');
+    } else {
+      var reduced = unreduced*f/100;
+      var cut = (100-f).toFixed(1).replace(/\.0$/,'');
+      mk(earlyElig?'warn':'neutral','Early-commencement factor', f.toFixed(0)+'%',
+         'Starting at age '+age+' pays about '+f.toFixed(0)+'% of the age-65 benefit ('+cut+'% reduction, permanent).');
+      mk(earlyElig?'good':'neutral','Estimated monthly pension', money(reduced)+'/mo',
+         earlyElig?('Single Life Annuity starting at age '+age+'.'):('If/when eligible to commence at age '+age+'.'));
+    }
+
+    note.innerHTML='Estimates use the standard multiplier formula and a representative reduction schedule (whole years). Actual factors, offsets, blended multipliers, and survivor reductions vary by SPD &mdash; verify with the KPRC.';
+  }
+  window.renderCalc=render;
+  [multEl,famcEl,svcEl,ageEl].forEach(function(el){el.addEventListener('input',render);el.addEventListener('change',render);});
+  render();
+})();
+</script>
+</body>
+</html>

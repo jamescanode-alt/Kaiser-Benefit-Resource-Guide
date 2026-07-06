@@ -1,0 +1,46 @@
+# PLAN_LOG
+
+## 2026-07-05 — Kaiser Retirement Benefits Guide (advisor field guide)
+
+**Task:** Build a single-file HTML "Kaiser Retirement Benefits Guide" for new Farther
+wealth advisors, using the AT&T Benefit Resource Guide
+(https://jamescanode-alt.github.io/ATT-Benefit-Resource-Guide/) as the template for
+layout, structure, and formatting. Left rail must include a dropdown of all plans/unions
+derived from the .md files in the Kaiser subfolders.
+
+**Source material:** 100 Summary Plan Descriptions (converted from PDF to .md) across 11
+region/group folders. Retirement content lives in the "RETIREMENT PROGRAMS" section of
+each SPD.
+
+**Plan architecture confirmed from SPDs:**
+- Core: **Kaiser Permanente Retirement Plan (KPRP)** — qualified defined-benefit pension.
+  Formula = **plan multiplier × Final Average Monthly Compensation (FAMC) × Years of
+  Credited Service**. Multiplier varies by group: 1.2% / 1.3% / 1.4% / 1.45% / 1.5%
+  (some groups blend, e.g. pre-2009 service at 1.5%).
+- FAMC = highest 60 consecutive months (of last 120) of monthly comp rate (hourly base
+  × 173.33).
+- Vesting: 5 Years of Service (or age 65 while employed).
+- Early Retirement: age 55 + 15 YOS, OR age + service ≥ 75 ("Rule of 75"); reduction
+  table 60% @55 → 100% @65.
+- Payment forms: Single Life, 50/66⅔/75% J&S, Lump Sum.
+- DC plans: **Tax-Sheltered Annuity (TSA, 403(b))** — Vanguard, auto-enroll 2%→6%,
+  pre-tax + Roth; **Supplemental Savings and Retirement Plan (SSRP)** — ~5% auto employer
+  contribution, 100% vested.
+- Special cases: CPMG (Colorado physicians) = cash balance; TPMG physician plans differ;
+  Stationary Engineers Local 39 = standalone multiemployer (Taft-Hartley) pension;
+  Washington = Group Health Cooperative transition offsets.
+
+**Deliverable:** `Kaiser_Retirement_Benefits_Guide.html` (self-contained, Farther-branded,
+navy/cream/gold design matching AT&T template) with:
+- Left rail: brand + plan/union dropdown (optgroups = regions, 100 options) + numbered nav.
+- Sections: landscape, eligibility/vesting, the pension formula, FAMC, early retirement /
+  Rule of 75, interactive pension estimator, payment options, TSA/SSRP savings plans,
+  retiree medical, IRMAA/Roth, strategy playbook, protections, glossary, contacts.
+- Interactive: pension estimator (multiplier × FAMC × service with early-retirement
+  reduction) driven by the selected plan's multiplier.
+
+**Risks / notes:** Multipliers and factors vary by CBA and plan year; guide is training
+only and repeatedly directs advisors to verify actual figures in the KPRC / official SPD.
+Accuracy-first per compliance standards; no fabricated figures.
+
+**Next steps:** Build HTML, verify visually at desktop + mobile, update CHANGE_LOG/TODO.
