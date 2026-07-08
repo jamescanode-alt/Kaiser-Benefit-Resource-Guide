@@ -165,3 +165,42 @@ rates (commit `2467996`):
 
 ### Status
 - ✅ Pushed to main (`2467996`); live via GitHub Pages after cache refresh.
+
+---
+
+## 2026-07-08 — Case studies and worked scenarios added
+
+### Summary
+Added seven teaching scenarios so new advisors see the rules applied, not just stated
+(commit `5d541c6`). All figures derive from the guide's existing representative values
+(1.2–1.5% multipliers, the NCAL Salaried reduction schedule); every person is labeled an
+illustrative composite; unsourced factors (J&S conversion, actuarial deferred-vested
+reductions) stay qualitative with KPRC pointers.
+
+- **Sec 02:** "The four-year offer" vesting-cliff scenario (Priya — leaving 9 months
+  early forfeits ~$435/mo for life) + sick-leave conversion scale check (~$44/mo,
+  honest framing).
+- **Sec 04:** "The overtime myth" (Rosa — $30k of final-year OT changes the pension by
+  zero; a $2/hr base raise doesn't) and "The phase-down that costs less than feared"
+  (Vic — FAMC is a rate, so part-time only slows Credited Service, ~1.2 yrs over 3 yrs).
+- **Sec 05:** "What one more year buys" (Nadia — $1,949 → $2,157/mo, ~11% permanent
+  raise) + "The fork in the road" (Ana/Ben — 18 months determines which reduction table
+  applies for life), appended to the deferred-vested callout.
+- **Sec 07:** "Three clients, three different right answers" — Elena (J&S; survivor's
+  resources), Devon (lump sum; legacy), Sam (health-impaired longevity; spouse already
+  protected). Each names the deciding factor.
+- **Sec 10:** "The December conversion" IRMAA cliff scenario ($400 over a tier → both
+  spouses pay the surcharge two years later); no hard-coded thresholds.
+- **Sec 11:** "Denise" capstone — an 8-row table applying every playbook step to one
+  client (NorCal CNA, 1.45%, $8,200 FAMC, 22 yrs; $1,962 vs $2,426/mo at 58 vs 60),
+  closed by a "what the case shows" lens.
+- Sec 08 deliberately skipped per the review recommendation.
+
+### Validation
+- All 15 arithmetic claims re-computed by script and matched to the published text.
+- HTML parser: tags balanced, 14/14 sections, no errors.
+- Preview: all 7 scenarios render; Denise table = 8 rows; vignette grid = 3 cards;
+  estimator intact; no console errors; no horizontal overflow at 375px.
+
+### Status
+- ✅ Pushed to main (`5d541c6`); live via GitHub Pages after cache refresh.
