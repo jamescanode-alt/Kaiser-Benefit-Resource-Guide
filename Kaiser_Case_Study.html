@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaiser Case Study: The Playbook Applied</title>
+<style>
+:root{
+  --cream:#F7F4E9;
+  --cream-deep:#EFE9D6;
+  --ink:#10243F;
+  --ink-soft:#33486A;
+  --blue:#1E55C0;
+  --gold:#C08A2D;
+  --gold-soft:#E4C98A;
+  --line:#D8D0BA;
+  --paper:#FDFCF6;
+  --good:#2E7D52;
+  --warn:#B5532A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.page{max-width:860px;margin:0 auto;padding:36px 26px 70px}
+.pn{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase}
+h1{font-size:34px;line-height:1.12;font-weight:normal;letter-spacing:-.4px;margin:10px 0 14px}
+h4{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft);margin:26px 0 10px;font-weight:700}
+p{margin-bottom:14px;font-size:16.5px}
+strong{font-weight:bold}
+.small{font-size:13.5px;color:var(--ink-soft);font-family:'Helvetica Neue',Arial,sans-serif}
+a.inline{color:var(--blue)}
+
+table{width:100%;border-collapse:collapse;margin:20px 0;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14.5px;background:var(--paper)}
+th{background:var(--ink);color:#fff;text-align:left;padding:11px 14px;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;font-weight:600}
+td{padding:11px 14px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#fbf9f1}
+td.num{font-variant-numeric:tabular-nums;text-align:right}
+
+.lens{background:#10243F;color:#e7eefa;border-radius:8px;padding:22px 24px;margin:26px 0}
+.lens .tag{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-soft);font-weight:700;display:block;margin-bottom:8px}
+.lens p{color:#dbe5f5;font-size:15.5px}
+.lens p:last-child{margin-bottom:0}
+.lens strong{color:#fff}
+.lens em{color:inherit;font-weight:700}
+
+.status-banner{margin-top:18px;padding:14px 18px;border-radius:8px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14.5px;font-weight:600}
+.status-banner.met{background:#10243F;color:#fff}
+.status-banner.met .sb-sub{color:#9fb4d4;font-weight:400;font-size:13px;margin-top:4px;display:block}
+
+/* ---------- interactive case study ---------- */
+.cs{margin:26px 0}
+.cs-progress{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);font-weight:700;margin-bottom:12px}
+.cs-step{background:var(--paper);border:1px solid var(--line);border-radius:10px;margin-bottom:14px}
+.cs-step .cs-head{display:flex;align-items:center;gap:12px;padding:14px 18px;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:14.5px;color:var(--ink)}
+.cs-step .cs-num{flex:0 0 auto;background:var(--blue);color:#fff;border-radius:20px;padding:3px 11px;font-size:10.5px;letter-spacing:1px;text-transform:uppercase}
+.cs-step.locked{background:var(--cream-deep);opacity:.55}
+.cs-step.locked .cs-num{background:var(--ink-soft)}
+.cs-step.locked .cs-body{display:none}
+.cs-step.done .cs-num{background:var(--good)}
+.cs-step .cs-body{padding:0 18px 16px}
+.cs-q{font-size:15.5px;margin-bottom:10px}
+.cs-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:6px;font-family:'Helvetica Neue',Arial,sans-serif}
+.cs-row label{font-size:13px;color:var(--ink-soft)}
+.cs-row input[type=number]{padding:8px 10px;border:1px solid var(--line);border-radius:6px;font-size:14px;width:150px;font-family:'Helvetica Neue',Arial,sans-serif;text-align:right}
+.cs-opts{list-style:none;margin:0 0 10px;font-family:'Helvetica Neue',Arial,sans-serif}
+.cs-opts li{margin-bottom:8px}
+.cs-opts label{display:flex;gap:9px;align-items:flex-start;font-size:14px;color:var(--ink);cursor:pointer}
+.cs-opts input{margin-top:3px}
+.cs-btn{background:var(--blue);color:#fff;border:none;border-radius:6px;padding:9px 18px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px;font-weight:600;cursor:pointer}
+.cs-btn:hover{background:#164a9e}
+.cs-btn:disabled{opacity:.5;cursor:default}
+.cs-fb{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px;margin-top:8px;line-height:1.6}
+.cs-fb.ok{color:var(--good);font-weight:600}
+.cs-fb.no{color:var(--warn)}
+.cs-reveal{border-left:4px solid var(--good);background:#eef6f1;border-radius:0 6px 6px 0;padding:12px 16px;margin-top:12px}
+.cs-reveal p{font-size:14.5px;margin:0}
+
+.disc{margin-top:36px;font-size:12px;color:var(--ink-soft);font-family:'Helvetica Neue',Arial,sans-serif;border-top:1px solid var(--line);padding-top:16px;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="pn">Advisor Field Guide &middot; Kaiser Permanente</div>
+  <h1>Case study: the playbook applied</h1>
+  <p class="small">An illustrative composite; figures use the guide's representative values. Keep the <a class="inline" href="Kaiser_Retirement_Benefits_Guide.html" target="_blank" rel="noopener">main guide</a> open in the other window: you will need its plan selector and reference tables.</p>
+  <p><strong>Denise</strong> is <strong>58</strong>, an RN in the <strong>California Nurses Association</strong> group in Northern California, with <strong>22 years of Credited Service</strong> and an <strong>$8,200 FAMC</strong>. She is married; her husband is 60 and has Social Security ahead but no pension of his own. She wants to retire &ldquo;as soon as it works.&rdquo; Work each step below: a correct answer unlocks the next, and the full case summary appears when all eight are done. Wrong answers get a hint, so use the guide's sections and plan selector as you go.</p>
+
+  <div class="cs" id="caseStudy">
+    <div class="cs-progress" id="csProgress"></div>
+
+    <div class="cs-step" data-step="1">
+      <div class="cs-head"><span class="cs-num">Step 1</span>Identify the plan</div>
+      <div class="cs-body">
+        <p class="cs-q">Use the plan selector in the main guide window to find the pension multiplier for Denise's group (California Nurses Association, Nor Cal). Enter it as a percentage.</p>
+        <div class="cs-row"><label for="cs1a">Multiplier (%)</label><input type="number" id="cs1a" step="0.01" min="0" max="5"><button type="button" class="cs-btn" data-check="0">Check</button></div>
+        <div class="cs-fb"></div>
+        <div class="cs-reveal" style="display:none"><p><strong>1.45%.</strong> NorCal CNA uses the standard defined-benefit formula with a 1.45% multiplier. With a real client, confirm it against her SPD before quoting anything.</p></div>
+      </div>
+    </div>
+
+    <div class="cs-step locked" data-step="2">
+      <div class="cs-head"><span class="cs-num">Step 2</span>Map the milestones</div>
+      <div class="cs-body">
+        <p class="cs-q">Denise is 58 with 22 Years of Service, retiring from active employment. Using the representative schedule in Section 05 of the guide, what percentage of her age-65 benefit would she receive if payments start now?</p>
+        <div class="cs-row"><label for="cs2a">Factor at 58 (%)</label><input type="number" id="cs2a" step="1" min="0" max="100"><button type="button" class="cs-btn" data-check="1">Check</button></div>
+        <div class="cs-fb"></div>
+        <div class="cs-reveal" style="display:none"><p><strong>75%.</strong> She qualifies for Early Retirement two ways: age 55 with 15+ years, and the Rule of 75 (58 + 22 = 80). She can start now, but at 75% of the age-65 amount, permanently.</p></div>
+      </div>
+    </div>
+
+    <div class="cs-step locked" data-step="3">
+      <div class="cs-head"><span class="cs-num">Step 3</span>Reconstruct the pension</div>
+      <div class="cs-body">
+        <p class="cs-q">Compute her benefit (FAMC $8,200; 22 years of Credited Service). (a) The unreduced monthly Single Life amount at 65 = multiplier &times; FAMC &times; Credited Service. (b) The monthly amount if she starts now at 58.</p>
+        <div class="cs-row"><label for="cs3a">(a) At 65 ($/mo)</label><input type="number" id="cs3a" step="0.01" min="0"><label for="cs3b">(b) At 58 ($/mo)</label><input type="number" id="cs3b" step="0.01" min="0"><button type="button" class="cs-btn" data-check="2">Check</button></div>
+        <div class="cs-fb"></div>
+        <div class="cs-reveal" style="display:none"><p><strong>$2,615.80 at 65; $1,961.85 at 58.</strong> 1.45% &times; $8,200 &times; 22 = $2,615.80/mo, reduced to 75% for starting at 58. Show her the alternative too: working to 60 (24 years, 85% factor) pays about $2,425.56/mo. Two more years of work are worth roughly +$464/mo for life. That comparison is the advice.</p></div>
+      </div>
+    </div>
+
+    <div class="cs-step locked" data-step="4">
+      <div class="cs-head"><span class="cs-num">Step 4</span>Annuity vs lump sum</div>
+      <div class="cs-body">
+        <p class="cs-q">Market rates have <strong>risen</strong> since the plan's current lump-sum conversion basis was set, and the plan resets its segment rates soon. If Denise waits until after the reset for her lump-sum quote, the quote will most likely be:</p>
+        <ul class="cs-opts">
+          <li><label><input type="radio" name="cs4" value="a">Larger: lump sums grow the longer she waits</label></li>
+          <li><label><input type="radio" name="cs4" value="b">Smaller: higher segment rates shrink the present value</label></li>
+          <li><label><input type="radio" name="cs4" value="c">Unchanged: rate resets affect only the annuity</label></li>
+          <li><label><input type="radio" name="cs4" value="d">Directionless: interest rates do not affect lump sums</label></li>
+        </ul>
+        <div class="cs-row"><button type="button" class="cs-btn" data-check="3">Check</button></div>
+        <div class="cs-fb"></div>
+        <div class="cs-reveal" style="display:none"><p><strong>Smaller.</strong> The lump sum is the present value of her annuity discounted at the segment rates: higher rates, smaller lump sum. The move is to get KPRC quotes for commencement dates on each side of the reset and compare them in dollars. Her monthly annuity is unaffected either way.</p></div>
+      </div>
+    </div>
+
+    <div class="cs-step locked" data-step="5">
+      <div class="cs-head"><span class="cs-num">Step 5</span>Survivor structure</div>
+      <div class="cs-body">
+        <p class="cs-q">Denise is married and her husband has no pension of his own. Which payment form is her legal default, and what would electing anything else require?</p>
+        <ul class="cs-opts">
+          <li><label><input type="radio" name="cs5" value="a">Single Life Annuity; she may change it at any time</label></li>
+          <li><label><input type="radio" name="cs5" value="b">75% Joint &amp; Survivor; plan-administrator approval</label></li>
+          <li><label><input type="radio" name="cs5" value="c">Lump sum; nothing extra if elected before 65</label></li>
+          <li><label><input type="radio" name="cs5" value="d">50% Joint &amp; Survivor; written, notarized spousal consent to elect anything else</label></li>
+        </ul>
+        <div class="cs-row"><button type="button" class="cs-btn" data-check="4">Check</button></div>
+        <div class="cs-fb"></div>
+        <div class="cs-reveal" style="display:none"><p><strong>The 50% J&amp;S is the federal default for married participants</strong>, and her husband is entitled to it; anything else takes his written, notarized consent, generally within 90 days before payments begin. Because he has no pension of his own, they compared the higher J&amp;S levels against life-insurance alternatives before deciding.</p></div>
+      </div>
+    </div>
+
+    <div class="cs-step locked" data-step="6">
+      <div class="cs-head"><span class="cs-num">Step 6</span>Pre-65 healthcare</div>
+      <div class="cs-body">
+        <p class="cs-q">If Denise retires now at 58, how many years must her health coverage bridge before Medicare eligibility?</p>
+        <div class="cs-row"><label for="cs6a">Years</label><input type="number" id="cs6a" step="1" min="0" max="20"><button type="button" class="cs-btn" data-check="5">Check</button></div>
+        <div class="cs-fb"></div>
+        <div class="cs-reveal" style="display:none"><p><strong>Seven years.</strong> That gap, not the pension math, was the number that nearly moved her date. Confirm retiree-medical eligibility in the H&amp;W SPD and benchmark marketplace pricing <strong>before</strong> she gives notice.</p></div>
+      </div>
+    </div>
+
+    <div class="cs-step locked" data-step="7">
+      <div class="cs-head"><span class="cs-num">Step 7</span>Savings accounts</div>
+      <div class="cs-body">
+        <p class="cs-q">What are the first moves on her Vanguard 403(b)?</p>
+        <ul class="cs-opts">
+          <li><label><input type="radio" name="cs7" value="a">Move everything into the fund with the best five-year return</label></li>
+          <li><label><input type="radio" name="cs7" value="b">Convert the full pre-tax balance to Roth this year</label></li>
+          <li><label><input type="radio" name="cs7" value="c">Confirm employer contributions are being captured and that the allocation is deliberate rather than default-fund inertia</label></li>
+          <li><label><input type="radio" name="cs7" value="d">Cash it out at retirement to pay off the mortgage</label></li>
+        </ul>
+        <div class="cs-row"><button type="button" class="cs-btn" data-check="6">Check</button></div>
+        <div class="cs-fb"></div>
+        <div class="cs-reveal" style="display:none"><p><strong>Basics first.</strong> Capture any employer money per her CBA, set a deliberate allocation, and only then consider anything fancier. The 403(b) is the flexible, growth-and-legacy layer alongside the pension's guaranteed floor.</p></div>
+      </div>
+    </div>
+
+    <div class="cs-step locked" data-step="8">
+      <div class="cs-head"><span class="cs-num">Step 8</span>Sequence &amp; MAGI</div>
+      <div class="cs-body">
+        <p class="cs-q">Her plan tapers Roth conversions as she approaches age 63. Why?</p>
+        <ul class="cs-opts">
+          <li><label><input type="radio" name="cs8" value="a">IRMAA uses MAGI from two years prior, so income at 63 sets her Medicare premiums at 65</label></li>
+          <li><label><input type="radio" name="cs8" value="b">Roth conversions are not permitted after age 63</label></li>
+          <li><label><input type="radio" name="cs8" value="c">Required minimum distributions begin at 63</label></li>
+          <li><label><input type="radio" name="cs8" value="d">Conversions after 63 are taxed twice</label></li>
+        </ul>
+        <div class="cs-row"><button type="button" class="cs-btn" data-check="7">Check</button></div>
+        <div class="cs-fb"></div>
+        <div class="cs-reveal" style="display:none"><p><strong>The two-year lookback.</strong> Her gap years between retirement and Social Security/RMDs are ideal for bracket-fill conversions, but income at 63 becomes her premium at 65. Size each conversion against the current IRMAA tier table (Section 10 of the guide) before year-end.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="csResults" style="display:none">
+  <h4>The full picture</h4>
+  <table>
+    <thead><tr><th>Step</th><th>Applied to Denise</th><th>Result</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1 &middot; Identify the plan</strong></td><td>NorCal CNA in the selector shows a <strong>1.45%</strong> multiplier, standard defined-benefit formula; confirmed against her SPD.</td><td class="num">1.45%</td></tr>
+      <tr><td><strong>2 &middot; Map milestones</strong></td><td>Vested (22 yrs). Early Retirement: 58 + 22 = 80, so the Rule of 75 is met; she can start now, reduced. The representative factor at 58 is 75%.</td><td class="num">Eligible now</td></tr>
+      <tr><td><strong>3 &middot; Reconstruct the pension</strong></td><td>1.45% &times; $8,200 &times; 22 = <strong>$2,616/mo</strong> unreduced at 65. Starting at 58: &times;75% = <strong>$1,962/mo</strong>. Working to 60 instead (24 yrs, 85% factor): about <strong>$2,426/mo</strong>. Two more years of work are worth roughly +$464/mo (+24%) for life.</td><td class="num">$1,962 vs $2,426</td></tr>
+      <tr><td><strong>4 &middot; Annuity vs lump sum</strong></td><td>KPRC quotes requested for both, at more than one commencement date, after checking when the plan next resets its segment rates.</td><td class="num">Quotes in hand</td></tr>
+      <tr><td><strong>5 &middot; Survivor structure</strong></td><td>Her husband has no pension of his own, so the J&amp;S levels are compared against life-insurance alternatives. The 50% J&amp;S default stands unless a notarized consent supports something else.</td><td class="num">J&amp;S weighed</td></tr>
+      <tr><td><strong>6 &middot; Pre-65 healthcare</strong></td><td>Retiring at 58 leaves a <strong>7-year gap to Medicare</strong>. Retiree-medical eligibility is confirmed in the H&amp;W SPD, and marketplace pricing benchmarked, <em>before</em> she gives notice. This, not the pension, is the number that nearly moved her date.</td><td class="num">Gap priced</td></tr>
+      <tr><td><strong>7 &middot; Vanguard accounts</strong></td><td>403(b) moved off the default fund into an allocation matching the plan; employer contributions confirmed per her CBA.</td><td class="num">Reallocated</td></tr>
+      <tr><td><strong>8 &middot; Sequence &amp; MAGI</strong></td><td>Her low-income years between retirement and Social Security/RMDs are sized for bracket-fill Roth conversions, tapering as she approaches 63 because of the two-year IRMAA lookback to her Medicare enrollment at 65.</td><td class="num">Conversion plan</td></tr>
+    </tbody>
+  </table>
+  <div class="lens">
+    <span class="tag">What the case shows</span>
+    <p>The pension arithmetic took ten minutes; it was steps 3, 5, and 6 that carried the decision. The <strong>$464/month gap</strong> between starting at 58 and 60 gave Denise a concrete price for early retirement, the survivor analysis protected the spouse without a pension, and the healthcare gap was the item that could have quietly cost six figures if it had been checked <em>after</em> she resigned. Every number above is representative; before advising a real client, rebuild the row-3 math from a KPRC statement and the controlling SPD.</p>
+  </div>
+  </div>
+
+  <div class="disc">
+    Internal educational and training use by advisors. Illustrative composite with representative figures; not legal, tax, or investment advice. Plan terms are governed solely by the official plan documents and SPDs. Verify a client's actual figures with the Kaiser Permanente Retirement Center and the current SPD before making recommendations. Part of the <a class="inline" href="Kaiser_Retirement_Benefits_Guide.html" target="_blank" rel="noopener">Kaiser Permanente Retirement Benefits Advisor Field Guide</a>.
+  </div>
+</div>
+
+<script>
+(function(){
+  var cs=document.getElementById('caseStudy');
+  if(!cs) return;
+  var STEPS=[
+    {id:1,type:'num',fields:[{el:'cs1a',ok:function(x){return Math.abs(x-1.45)<=0.005||Math.abs(x-0.0145)<=0.0005;}}],
+     hint:'In the main guide window, pick her group (California Nurses Association, under Nor Cal) in the left-rail selector and read the multiplier from the Selected-plan panel, or use the multiplier table in Section 03.'},
+    {id:2,type:'num',fields:[{el:'cs2a',ok:function(x){return Math.abs(x-75)<=0.5||Math.abs(x-0.75)<=0.005;}}],
+     hint:'Look up age 58 in the early-commencement reduction table in Section 05 of the guide.'},
+    {id:3,type:'num',fields:[{el:'cs3a',ok:function(x){return x>=2610&&x<=2620;}},{el:'cs3b',ok:function(x){return x>=1957&&x<=1966;}}],
+     hint:'(a) is 1.45% &times; $8,200 &times; 22. (b) applies the 75% factor from Step 2 to (a). Round to the nearest dollar if you like.'},
+    {id:4,type:'radio',name:'cs4',correct:'b',
+     hint:'The lump sum is a present value discounted at the segment rates. Think about which direction discounting moves when rates rise (Section 07 of the guide).'},
+    {id:5,type:'radio',name:'cs5',correct:'d',
+     hint:'Section 07 of the guide: federal law sets the default for married participants, and changing it takes more than her signature alone.'},
+    {id:6,type:'num',fields:[{el:'cs6a',ok:function(x){return x===7;}}],
+     hint:'Medicare eligibility begins at 65. Denise is 58.'},
+    {id:7,type:'radio',name:'cs7',correct:'c',
+     hint:'Basics before optimization. The Section 08 advisor lens names the two things to confirm first.'},
+    {id:8,type:'radio',name:'cs8',correct:'a',
+     hint:'Section 10 of the guide: which year of income sets a Medicare premium, and at what age does she enroll?'}
+  ];
+  var done=0;
+  function parseNum(id){
+    var v=document.getElementById(id).value;
+    if(v==null||String(v).trim()==='') return NaN;
+    return parseFloat(String(v).replace(/[$,%\s]/g,''));
+  }
+  function stepEl(i){return cs.querySelector('.cs-step[data-step="'+i+'"]');}
+  function updateProgress(){
+    document.getElementById('csProgress').textContent='Interactive case: '+done+' of '+STEPS.length+' steps complete';
+  }
+  function finish(){
+    var b=document.createElement('div');
+    b.className='status-banner met';
+    b.innerHTML='&check; Case complete'+
+      '<span class="sb-sub">All eight steps answered. Compare your reasoning with the full summary below.</span>';
+    cs.appendChild(b);
+    var res=document.getElementById('csResults');
+    res.style.display='block';
+    b.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+  function complete(idx,revealed){
+    var s=STEPS[idx], el=stepEl(s.id);
+    if(el.classList.contains('done')) return;
+    el.classList.add('done');
+    el.querySelector('.cs-reveal').style.display='block';
+    var fb=el.querySelector('.cs-fb');
+    fb.className='cs-fb ok';
+    fb.textContent=revealed?'Answer revealed. Review the explanation below, then continue.':'Correct.';
+    el.querySelectorAll('input, button.cs-btn').forEach(function(n){n.disabled=true;});
+    done++;
+    updateProgress();
+    if(s.id<STEPS.length){
+      var next=stepEl(s.id+1);
+      next.classList.remove('locked');
+    } else {
+      finish();
+    }
+  }
+  function check(idx){
+    var s=STEPS[idx], el=stepEl(s.id), fb=el.querySelector('.cs-fb');
+    var ok;
+    if(s.type==='num'){
+      ok=s.fields.every(function(f){var x=parseNum(f.el);return !isNaN(x)&&f.ok(x);});
+    } else {
+      var sel=el.querySelector('input[name="'+s.name+'"]:checked');
+      ok=!!sel&&sel.value===s.correct;
+    }
+    if(ok){complete(idx,false);return;}
+    s.tries=(s.tries||0)+1;
+    fb.className='cs-fb no';
+    fb.innerHTML='Not quite. '+s.hint+(s.tries>=2
+      ?' <button type="button" class="cs-btn" style="background:var(--ink-soft);padding:5px 12px;font-size:12px;margin-left:6px" data-reveal="'+idx+'">Show the answer</button>'
+      :'');
+  }
+  cs.addEventListener('click',function(e){
+    var t=e.target;
+    if(!t||!t.dataset) return;
+    if(t.dataset.check!==undefined){check(parseInt(t.dataset.check,10));}
+    else if(t.dataset.reveal!==undefined){complete(parseInt(t.dataset.reveal,10),true);}
+  });
+  cs.addEventListener('keydown',function(e){
+    if(e.key==='Enter'&&e.target&&e.target.tagName==='INPUT'&&e.target.type==='number'){
+      var st=e.target.closest('.cs-step');
+      if(st&&!st.classList.contains('done')){e.preventDefault();check(parseInt(st.getAttribute('data-step'),10)-1);}
+    }
+  });
+  updateProgress();
+})();
+</script>
+</body>
+</html>

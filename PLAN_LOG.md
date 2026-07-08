@@ -152,3 +152,17 @@ only on completion. Vanilla JS, matching the estimator's style; no frameworks.
 correct choices spread across positions (B/D/C/A) to avoid a guessable pattern.
 
 **Next steps:** verify both in preview (full click-through), push, update CHANGE_LOG.
+
+---
+
+## 2026-07-08 — Standalone window for the Section 11 case study
+
+**Task:** Make the interactive case study openable in a separate window. Approach: a
+self-contained `Kaiser_Case_Study.html` (same styling/JS idiom, step-1 wording adjusted
+to point at the main guide window for the selector), plus an "Open in a separate window"
+button in Section 11 (window.open popup, falls back to a new tab if blocked; named
+window so re-clicks focus rather than duplicate).
+
+**Risk:** content now lives in two files; a sync note goes in TODO.md.
+
+**Next steps:** build page, verify both in preview, push, update CHANGE_LOG/TODO.

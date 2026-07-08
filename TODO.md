@@ -29,6 +29,10 @@
 - [ ] **Catch-up contributions (Section 08):** the guide does not yet mention the age-50
       catch-up or the 403(b) 15-year-service catch-up. Confirm availability in the
       savings-plan SPDs before adding (relevant to long-tenured Kaiser employees).
+- [ ] **Case-study duplication:** the interactive case study now lives in both
+      `Kaiser_Retirement_Benefits_Guide.html` (Section 11) and the standalone
+      `Kaiser_Case_Study.html`. Any content change to one must be mirrored in the other
+      (questions, answers/tolerances, reveals, summary table, lens).
 
 ## Notes
 - Guide is training-only; every quantitative section directs advisors to verify with the
