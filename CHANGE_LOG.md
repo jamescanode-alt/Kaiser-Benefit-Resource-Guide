@@ -204,3 +204,34 @@ reductions) stay qualitative with KPRC pointers.
 
 ### Status
 - ✅ Pushed to main (`5d541c6`); live via GitHub Pages after cache refresh.
+
+---
+
+## 2026-07-08 — Case-study fixes + interactive conversion
+
+### Summary
+Two commits:
+1. **`a9cacdf` — readability fixes (user-reported):** moved the "illustrative composite"
+   note directly under the Section 11 case-study header; fixed the unreadable
+   dark-on-dark <em> ("after") in the navy lens box with a `.lens em` rule (bold italic,
+   inherited light color) rather than a new color. Audit found this was the only <em> on
+   a dark background; the rule protects future ones.
+2. **`53774c8` — interactive case study:** the Denise capstone is now an 8-step exercise.
+   Each playbook step poses a question; a correct answer reveals that step's explanation
+   and unlocks the next. Numeric steps: multiplier (1.45), age-58 factor (75%), the
+   pension math ($2,616 / $1,962 with rounding tolerance), Medicare gap (7 yrs).
+   Multiple-choice steps: segment-rate direction, married payout default, 403(b) first
+   moves, IRMAA lookback (correct answers spread across positions). Wrong answers show a
+   section-specific hint; after two misses a "Show the answer" escape appears. The
+   summary table + "what the case shows" lens are hidden until completion, then revealed
+   under a "Case complete" banner. Vanilla JS/CSS in the guide's existing idiom.
+
+### Validation
+- HTML parser: tags balanced, 8 cs-steps, single script block.
+- Preview click-through: full correct run (8/8 → banner + revealed summary), wrong-answer
+  hint path, two-miss reveal path, Enter-key submit, disabled inputs after completion.
+- `.lens em` computed style confirmed: rgb(219,229,245), italic, weight 700.
+- No console errors; no horizontal overflow at 375px.
+
+### Status
+- ✅ Pushed to main (`a9cacdf`, `53774c8`); live via GitHub Pages after cache refresh.
