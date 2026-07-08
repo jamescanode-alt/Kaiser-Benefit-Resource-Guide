@@ -92,3 +92,19 @@ advisor-guide branding. Historical log entries retain the old name as a record.
 Section 14 contacts, footer), index.html (title, logo/tagline), TODO.md (contacts item).
 
 **Next steps:** Verify in preview, push, update CHANGE_LOG.
+
+---
+
+## 2026-07-08 — Add government reference links (tables, limits, rates)
+
+**Task:** Link the guide's quantitative claims to the authoritative government pages that
+publish the underlying tables/limits: IRS COLA dollar limits (Sec 04), IRS minimum present
+value segment rates + rollover rules (Sec 07), IRS 403(b) contribution limits + designated
+Roth FAQs (Sec 08), HealthCare.gov (Sec 09), SSA IRMAAs (Sec 10), PBGC maximum guarantee,
+DOL EBSA QDRO publication, IRS RMD FAQs (Sec 12), ssa.gov (Sec 01), plus a consolidated
+"Government references" list in Section 14.
+
+**Validation:** every URL checked live before publishing (curl 200, or search-index
+confirmation for ssa.gov/dol.gov which block automated fetchers).
+
+**Next steps:** Edit HTML, re-validate structure and preview, push, update CHANGE_LOG.
