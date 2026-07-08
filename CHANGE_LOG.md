@@ -235,3 +235,33 @@ Two commits:
 
 ### Status
 - ✅ Pushed to main (`a9cacdf`, `53774c8`); live via GitHub Pages after cache refresh.
+
+---
+
+## 2026-07-08 — Case study openable in a separate window
+
+### Summary
+(commit `527f187`)
+- **New `Kaiser_Case_Study.html`:** self-contained standalone page with the same 8-step
+  interactive Denise exercise (identical questions, answer tolerances, reveals, summary
+  table, and lens), styled to match the guide. Step-1 wording/hints direct the advisor to
+  the main guide window for the plan selector; the footer links back to the guide.
+  Live URL once Pages rebuilds:
+  https://jamescanode-alt.github.io/Kaiser-Benefit-Resource-Guide/Kaiser_Case_Study.html
+- **Guide Section 11:** "Open in a separate window" button next to the case-study note.
+  Uses a named window.open popup (900×1000; re-clicks focus the existing window) and
+  falls back to a normal new tab if the popup is blocked (`target="_blank"` +
+  `rel="noopener"`).
+- **TODO.md:** sync note added — the exercise now lives in two files and edits must be
+  mirrored.
+
+### Validation
+- Both files pass the HTML tag-balance check.
+- Standalone page: full click-through (wrong-answer hint path, 8/8 correct run with exact
+  decimals, completion banner, revealed summary with 8 rows); no console errors.
+- Guide: button present with popup + fallback attributes; in-page exercise unaffected.
+- Design-hook flags on the new file are the same inherited Helvetica/side-tab tokens,
+  intentionally copied so the popup matches the guide.
+
+### Status
+- ✅ Pushed to main (`527f187`); live via GitHub Pages after cache refresh.
