@@ -134,3 +134,34 @@ Stripped all "Farther" and "Focus Team" references from the published pages
 
 ### Status
 - ✅ Pushed to main (`155e48f`); live via GitHub Pages after cache refresh.
+
+---
+
+## 2026-07-08 — Government reference links added throughout the guide
+
+### Summary
+Added authoritative .gov links wherever the guide discusses official tables, limits, or
+rates (commit `2467996`):
+- **Sec 01:** ssa.gov on the Social Security pillar.
+- **Sec 04:** IRS COLA dollar limits (the FAMC pay cap and maximum-pension limits).
+- **Sec 07:** IRS minimum present value segment rates (linked inline where segment rates
+  are introduced) and IRS rollover rules in the tax-mechanic callout.
+- **Sec 08:** IRS 403(b) contribution limits; IRS designated-Roth FAQs.
+- **Sec 09:** HealthCare.gov (pre-65 marketplace pricing) and medicare.gov eligibility.
+- **Sec 10:** SSA "how income affects your Medicare premiums" (IRMAA tier tables) added
+  next to the existing medicare.gov link.
+- **Sec 12:** PBGC maximum-guarantee tables, DOL EBSA QDRO publication, IRS RMD FAQs.
+- **Sec 14:** new "Government references (current tables, limits & rates)" section — a
+  12-item annotated link list consolidating all of the above.
+
+### Validation
+- Every URL checked before publishing: 10 returned HTTP 200 via curl; ssa.gov and dol.gov
+  block automated fetchers (403), so their canonical URLs were confirmed via search index.
+  One candidate IRS RMD URL 404'd and was replaced with the live RMD-FAQs page.
+- HTML parser: tags balanced, no errors. All 12 external URLs in the file match the
+  verified set; every external link uses target="_blank" rel="noopener".
+- Browser preview: 25 external anchors render, estimator intact, no console errors;
+  Section 14 list screenshot confirmed.
+
+### Status
+- ✅ Pushed to main (`2467996`); live via GitHub Pages after cache refresh.
