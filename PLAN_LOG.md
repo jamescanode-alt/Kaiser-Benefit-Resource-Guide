@@ -108,3 +108,26 @@ DOL EBSA QDRO publication, IRS RMD FAQs (Sec 12), ssa.gov (Sec 01), plus a conso
 confirmation for ssa.gov/dol.gov which block automated fetchers).
 
 **Next steps:** Edit HTML, re-validate structure and preview, push, update CHANGE_LOG.
+
+---
+
+## 2026-07-08 — Case studies, examples, and scenarios pass
+
+**Task:** Add approved teaching scenarios to the guide so new advisors see the rules
+applied, not just stated:
+- Sec 02: vesting-cliff scenario (~$435/mo at stake) + sick-leave conversion scale check.
+- Sec 04: two FAMC scenarios (overtime myth; phased-retirement rate-vs-service asymmetry).
+- Sec 05: "one more year" worked math (80%→85% + extra service ≈ 11% raise) and a
+  deferred-vested fork-in-the-road scenario (Ana/Ben).
+- Sec 07: three qualitative client vignettes for annuity / lump sum / J&S (no fabricated
+  conversion factors).
+- Sec 10: IRMAA December-conversion cliff mini-scenario (no hard-coded thresholds).
+- Sec 11: "Denise" capstone case study applying all 8 playbook steps with the guide's
+  representative figures (NorCal CNA, 1.45%, $8,200 FAMC, 22 yrs).
+- Sec 08 deliberately skipped per review.
+
+**Guardrails:** all people are labeled illustrative composites; arithmetic uses only the
+multipliers/reduction schedule already published in the guide; unsourced factors (J&S,
+actuarial deferred-vested) stay qualitative with KPRC pointers.
+
+**Next steps:** Edit HTML, verify math + structure + preview, push, update CHANGE_LOG.
