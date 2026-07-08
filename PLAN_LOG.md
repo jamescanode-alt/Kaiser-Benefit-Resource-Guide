@@ -79,3 +79,16 @@ standards; no specific rate/dollar figures asserted as current. Mobile left-rail
 deferred to TODO.
 
 **Next steps:** Edit HTML, validate structure, push, update CHANGE_LOG/TODO.
+
+---
+
+## 2026-07-08 — Remove Farther / Focus Team branding
+
+**Task:** Strip all "Farther" and "Focus Team" references from the two user-facing pages
+(`Kaiser_Retirement_Benefits_Guide.html`, `index.html`), replacing them with neutral
+advisor-guide branding. Historical log entries retain the old name as a record.
+
+**Files:** guide (nav brand, hero lead, Section 08 lens, Section 10 disclaimer,
+Section 14 contacts, footer), index.html (title, logo/tagline), TODO.md (contacts item).
+
+**Next steps:** Verify in preview, push, update CHANGE_LOG.

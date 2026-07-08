@@ -2,7 +2,7 @@
 
 ## Open items / follow-ups
 
-- [ ] **Fill in Farther Kaiser Focus Team contacts** in Section 14 (currently placeholders
+- [ ] **Fill in advisor team contacts** in Section 14 (currently placeholders
       "Add advisor name & contact"). Do not fabricate names.
 - [ ] **Confirm pension multipliers marked "Confirm in SPD"** for the ~24 groups where the
       formula phrasing wasn't auto-detected (physician plans, DC-only, benefit-band, or
