@@ -110,3 +110,27 @@ Implemented the approved content review of `Kaiser_Retirement_Benefits_Guide.htm
 - ✅ Pushed to main (`c4adeac`); live via GitHub Pages after cache refresh.
 - Design-hook flags (Helvetica, side-tab accents) left as-is — inherited intentionally
   from the approved AT&T template per the 2026-07-05 entry.
+
+---
+
+## 2026-07-08 — Removed Farther / Focus Team branding
+
+### Summary
+Stripped all "Farther" and "Focus Team" references from the published pages
+(commit `155e48f`), per user direction:
+- **Guide:** nav brand is now "Advisor Field Guide / KAISER PERMANENTE"; hero lead says
+  "a new wealth advisor"; Section 08 lens and Section 10 tax disclaimer de-branded;
+  Section 14 contacts heading renamed to "Advisor team" (placeholders unchanged);
+  footer title now "Kaiser Permanente Retirement Benefits · Advisor Field Guide".
+- **Landing page:** title "Kaiser Benefit Resource Guide"; logo removed; tagline
+  "Advisor Resources".
+- **TODO.md:** contacts item reworded to match the renamed section.
+- Historical PLAN_LOG/CHANGE_LOG entries intentionally retain the old name as a record.
+
+### Validation
+- Grep across `*.html`: zero remaining matches for Farther / Focus Team.
+- Browser preview: both pages render, estimator intact (3 result cards), landing page
+  screenshot confirmed clean.
+
+### Status
+- ✅ Pushed to main (`155e48f`); live via GitHub Pages after cache refresh.
