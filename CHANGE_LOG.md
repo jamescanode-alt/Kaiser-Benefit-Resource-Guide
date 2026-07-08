@@ -50,3 +50,18 @@
   `Colorado/Webinars/*.pptx` files also remain local.
 - Open follow-ups tracked in TODO.md (advisor contacts, "Confirm in SPD" multipliers,
   physician/special-plan appendix, per-region reduction factors).
+
+---
+
+## 2026-07-08 — Verified Kaiser Guide Accessibility
+
+### Summary
+- Confirmed `Kaiser_Retirement_Benefits_Guide.html` is committed and pushed to the main branch.
+- Users can now access the guide directly from the GitHub repository.
+- File is self-contained and can be opened locally in any browser.
+
+### Status
+- ✅ Guide is accessible in the repository at:
+  https://github.com/jamescanode-alt/Kaiser-Benefit-Resource-Guide
+- ✅ Pushed commit `95f002b` documenting task completion.
+- ✅ Guide ready for advisors to download and use.
