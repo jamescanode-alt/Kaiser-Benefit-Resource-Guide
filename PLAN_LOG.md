@@ -131,3 +131,24 @@ multipliers/reduction schedule already published in the guide; unsourced factors
 actuarial deferred-vested) stay qualitative with KPRC pointers.
 
 **Next steps:** Edit HTML, verify math + structure + preview, push, update CHANGE_LOG.
+
+---
+
+## 2026-07-08 — Case-study readability fix + interactive conversion
+
+**Task A (carried over):** move the "illustrative composite" note under the Section 11
+case-study header; fix the unreadable dark-on-dark <em> ("after") inside the navy lens
+box via a `.lens em` rule (bold italic, inherited color) instead of a new color.
+
+**Task B:** convert the Section 11 Denise case study into an interactive exercise. The
+advisor must answer each playbook step (numeric entries for the multiplier, reduction
+factor, pension math, and Medicare gap; multiple choice for segment rates, survivor
+default, 403(b) first moves, and the IRMAA lookback) to unlock the next step. Wrong
+answers get a hint; after two misses a "show the answer" escape appears so no one is
+hard-stuck. The full summary table + "what the case shows" lens stay but are revealed
+only on completion. Vanilla JS, matching the estimator's style; no frameworks.
+
+**Risks:** answer tolerances must accept reasonable rounding ($2,615.80 vs $2,616);
+correct choices spread across positions (B/D/C/A) to avoid a guessable pattern.
+
+**Next steps:** verify both in preview (full click-through), push, update CHANGE_LOG.
