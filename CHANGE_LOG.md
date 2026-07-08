@@ -69,3 +69,44 @@
   https://jamescanode-alt.github.io/Kaiser-Benefit-Resource-Guide/
 - ✅ Repository made public and Pages enabled.
 - ✅ `.nojekyll` file added to resolve deployment (commit `dd29e68`).
+
+---
+
+## 2026-07-08 — Guide review pass: clarity, insights, lump-sum rate sensitivity
+
+### Summary
+Implemented the approved content review of `Kaiser_Retirement_Benefits_Guide.html`
+(commit `c4adeac`), focused on new-advisor comprehension:
+
+- **Section 01:** "Day-one quick reference" table — the five numbers that drive most
+  Kaiser conversations (vesting, ER gate, reduction range, married default, TSA auto-enroll).
+- **Section 02:** the three service definitions (Hour / Year / Credited) converted from a
+  dense paragraph to a table, plus a part-time 1,000-vs-2,000-hour insight note.
+- **Section 03:** worked example extended with an age-60 companion case ($1,275/mo at 85%)
+  bridging the formula to the early-start reduction.
+- **Section 04:** dated "$330,000 in 2023" IRS pay-cap figure generalized to indexed-limit
+  language routed to the KPRC (accuracy/compliance).
+- **Section 05 + estimator:** new warning that the subsidized reduction schedule belongs to
+  active-service retirees; deferred vested benefits typically face steeper actuarial
+  reductions. Caveat added to the estimator callout and its JS note.
+- **Section 07 (user-flagged as critical):** full lump-sum interest-rate sensitivity
+  treatment — segment-rate mechanics, inverse relationship, lookback/stability-period
+  timing, a three-step "how to use this with a client" playbook, and a
+  commencement-timing trap callout. Comparison cards fixed (J&S inflation con added;
+  RMD line clarified for Roth; rate-sensitivity con added to lump sum).
+- **Section 11:** first-meeting question set converted to a 7-item checklist.
+- **Section 13:** glossary entries added/extended (Segment rates; Deferred Vested).
+- **Hero:** 55-word lead sentence split in two.
+- **TODO:** added mobile left-rail fallback and catch-up-contribution follow-ups; fixed
+  stale "not a git repository" note.
+
+### Validation
+- HTML parser check: tags balanced, 14/14 sections, all anchors resolve, no new bare
+  entities (20 pre-existing ones are in dropdown labels/JS and unchanged).
+- Browser preview: no console errors; all 8 new content blocks render; selector →
+  estimator flow re-tested (Georgia 1.3% → $1,300/mo); no horizontal overflow at 375px.
+
+### Status
+- ✅ Pushed to main (`c4adeac`); live via GitHub Pages after cache refresh.
+- Design-hook flags (Helvetica, side-tab accents) left as-is — inherited intentionally
+  from the approved AT&T template per the 2026-07-05 entry.
