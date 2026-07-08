@@ -23,8 +23,15 @@
       Confirm whether the originals should be de-duplicated in the library.
 - [ ] **Savings-plan match details** (employer % / match / true-up) vary by CBA and were
       summarized generally. Confirm per group from the savings-plan SPDs.
+- [ ] **Mobile navigation:** below 980px the entire left rail (plan selector + section nav)
+      is `display:none` with no fallback, so phone users cannot select a plan or jump to
+      sections. Add a collapsible menu / inline selector for small screens.
+- [ ] **Catch-up contributions (Section 08):** the guide does not yet mention the age-50
+      catch-up or the 403(b) 15-year-service catch-up. Confirm availability in the
+      savings-plan SPDs before adding (relevant to long-tenured Kaiser employees).
 
 ## Notes
 - Guide is training-only; every quantitative section directs advisors to verify with the
   KPRC and the controlling SPD (compliance-first).
-- Project is not currently a git repository — see CHANGE_LOG.md for push guidance.
+- Repo: https://github.com/jamescanode-alt/Kaiser-Benefit-Resource-Guide (public); guide is
+  live via GitHub Pages at https://jamescanode-alt.github.io/Kaiser-Benefit-Resource-Guide/.

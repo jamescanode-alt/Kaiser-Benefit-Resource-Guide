@@ -405,7 +405,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="gear"></div>
   <div class="eyebrow">Onboarding · Internal Reference</div>
   <h1>The Kaiser Permanente Retirement Benefits Guide</h1>
-  <p class="lead">What a new Farther advisor needs to read, explain, and advise on across Kaiser Permanente's pension and savings plans, from the defined-benefit formula to the decisions that matter most for clients, with a plan/union selector for all 100 Summary Plan Descriptions in the library.</p>
+  <p class="lead">What a new Farther advisor needs to read, explain, and advise on across Kaiser Permanente's pension and savings plans: the defined-benefit formula, the savings accounts, and the decisions that matter most for clients. Use the plan/union selector in the left rail to load any of the 100 Summary Plan Descriptions in the library.</p>
   <div class="meta">
     <div><span class="k">Core plan</span><span class="v">KP Retirement Plan (defined benefit)</span></div>
     <div><span class="k">Population</span><span class="v">11 regions · 100 union &amp; salaried groups</span></div>
@@ -435,6 +435,19 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
       <p>The federal layer. Not a KP benefit, but it shapes claiming timing and the income gap you are solving for.</p>
     </div>
   </div>
+  <h3>Day-one quick reference</h3>
+  <p>Five numbers drive most Kaiser retirement conversations. Memorize these first; each is unpacked in the sections that follow.</p>
+  <table>
+    <thead><tr><th>Milestone</th><th>The number</th><th>Covered in</th></tr></thead>
+    <tbody>
+      <tr><td>Pension vesting</td><td><strong>5 Years of Service</strong> (or age 65 while employed)</td><td><a class="inline" href="#eligibility">Section 02</a></td></tr>
+      <tr><td>Early Retirement gate</td><td><strong>Age 55 with 15 years</strong>, or age + service <strong>&ge; 75</strong> (Rule of 75)</td><td><a class="inline" href="#early">Section 05</a></td></tr>
+      <tr><td>Early-start reduction</td><td><strong>&asymp;60% at 55, rising to 100% at 65</strong> (representative)</td><td><a class="inline" href="#early">Section 05</a></td></tr>
+      <tr><td>Married payout default</td><td><strong>50% Joint &amp; Survivor</strong>; anything else needs notarized spousal consent</td><td><a class="inline" href="#payment">Section 07</a></td></tr>
+      <tr><td>TSA auto-enrollment</td><td><strong>2% pre-tax</strong>, auto-escalating 1%/year to <strong>6%</strong></td><td><a class="inline" href="#savings">Section 08</a></td></tr>
+    </tbody>
+  </table>
+  <p class="small">Representative values from the SPD library; specific contracts differ. Verify per client with the KPRC and the controlling SPD.</p>
   <div class="lens">
     <span class="tag">The advisor's lens</span>
     <p>The pension and the savings plans play <strong>complementary roles</strong>. The pension is a guaranteed-floor / longevity asset; the 403(b) and Supplemental Savings accounts are the flexible, growth-and-legacy assets. A common planning move is to use the guaranteed pension income to cover essential expenses, freeing the savings accounts to be invested for growth and used for discretionary spending and inheritance.</p>
@@ -461,10 +474,17 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 
   <h3>Who is eligible</h3>
   <p>Eligibility flows from the client's <strong>employee group</strong> (salaried/non-union) or their <strong>collective bargaining agreement</strong> (union). Most groups follow the same pattern: you become a participant on the <strong>first anniversary of your hire date</strong> if you were compensated for at least <strong>1,000 Hours of Service</strong> in the prior 12 months; otherwise on January 1 of the first calendar year you reach 1,000 hours.</p>
-  <div class="callout">
-    <span class="tag blue">Key terms to know</span>
-    <p><strong>Hour of Service</strong> &mdash; any compensated hour, including sick leave, vacation, holidays, and paid leaves. <strong>Year of Service</strong> &mdash; a calendar year (whole or part) with 1,000+ Hours of Service; used for participation, vesting, and early-retirement eligibility. <strong>Credited Service</strong> &mdash; a full year is earned at 2,000+ compensated hours; fewer hours earn proportional Credited Service. Credited Service drives the <em>size</em> of the benefit.</p>
-  </div>
+  <h3>Three kinds of &ldquo;service&rdquo; (do not mix them up)</h3>
+  <p>The SPDs use three service terms that sound alike but do different jobs. Confusing them is the most common new-advisor error in these plans.</p>
+  <table>
+    <thead><tr><th>Term</th><th>What counts</th><th>What it controls</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Hour of Service</strong></td><td>Any compensated hour, including sick leave, vacation, holidays, and paid leaves</td><td>The building block for the other two</td></tr>
+      <tr><td><strong>Year of Service</strong></td><td>A calendar year (whole or part) with 1,000+ Hours of Service</td><td>Participation, <strong>vesting</strong>, and early-retirement <strong>eligibility</strong></td></tr>
+      <tr><td><strong>Credited Service</strong></td><td>A full year at 2,000+ compensated hours; proportional credit below that</td><td>The <strong>size</strong> of the pension (the formula's third factor)</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Note the gap between the two thresholds: a part-time employee working 1,200 hours earns a full Year of Service toward vesting, but only partial Credited Service toward the benefit amount, in the same year.</p>
   <div class="callout gold">
     <span class="tag">A quiet win: unused sick leave</span>
     <p>In many KP groups, if a vested employee terminates with at least <strong>250 hours of unused sick leave</strong>, those hours are converted into <strong>additional Credited Service</strong>. For a long-tenured client this can measurably raise the pension. Flag it before a client burns down sick leave on the way out the door.</p>
@@ -524,6 +544,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag blue">Worked example &mdash; the basic formula</span>
     <p>Carolyn retires at age 65 with <strong>20 years</strong> of Credited Service. Her Final Average Monthly Compensation is <strong>$5,000</strong> and her group's multiplier is <strong>1.5%</strong>.<br>
     1.5% &times; $5,000 = <strong>$75</strong> per year of service &rarr; $75 &times; 20 = <strong>$1,500/month</strong> as a Single Life Annuity beginning at age 65.</p>
+    <p style="margin-top:8px">Now the same numbers, started early: Carolyn's colleague has the identical $1,500 age-65 benefit but begins payments at <strong>age 60</strong>. Under the representative reduction schedule in <a class="inline" href="#early">Section 05</a>, she receives 85% of it: <strong>$1,275/month, for life</strong>. She collects five years sooner, but the 15% reduction never goes away. Section 05 covers when that trade makes sense.</p>
   </div>
 
   <div class="callout warn">
@@ -551,7 +572,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag blue">Why this matters for advice</span>
     <p>Because FAMC is a <strong>base-pay rate</strong> average, a client's huge final-year of overtime does <em>not</em> inflate the pension &mdash; only base-rate raises and promotions do. And because it is the <strong>highest</strong> 5 years, a client who steps down to a lower-paid or part-time role late in their career usually does <em>not</em> hurt the pension, since the earlier, higher-rate years still count. That can make a phased, part-time glide path into retirement far more attractive than clients assume.</p>
   </div>
-  <p class="small">The IRS caps the annual pay that can be counted ($330,000 in 2023; indexed and higher in later years) and caps the total annual pension the plan can pay. High earners and physicians can hit these ceilings &mdash; confirm current limits with the KPRC.</p>
+  <p class="small">The IRS caps the annual pay that can be counted toward FAMC and caps the total annual pension a qualified plan can pay; both limits are indexed each year. High earners and physicians can hit these ceilings, so confirm the current-year limits with the KPRC rather than quoting a remembered figure.</p>
 </section>
 
 <section class="block" id="early">
@@ -587,6 +608,11 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     </tbody>
   </table>
   <p class="small">Ages in between are interpolated &mdash; e.g., retiring at 62&frac12; is about 92.5%. Exact reduction factors vary by SPD and contract; this schedule is representative, not universal. Confirm the client's own factors with the KPRC.</p>
+
+  <div class="callout warn">
+    <span class="tag">Who gets this schedule (and who doesn't)</span>
+    <p>The table above is the <strong>subsidized</strong> early-retirement schedule, and it generally belongs to employees who qualify for Early Retirement and <strong>retire from active Kaiser employment</strong>. A client who terminated years earlier with a <strong>Deferred Vested</strong> pension typically faces a <strong>steeper, actuarial reduction</strong> for starting before 65, or may need to wait until 65 entirely. Quoting the subsidized table to a former employee can overstate their benefit by a wide margin. Before quoting any early-start number, confirm with the KPRC which reduction basis applies to this client's status.</p>
+  </div>
 
   <div class="callout warn">
     <span class="tag">The trap: the reduction is steep, and permanent</span>
@@ -638,7 +664,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 
   <div class="callout warn">
     <span class="tag">Read this before relying on the output</span>
-    <p>This tool models the <strong>standard KP multiplier formula</strong> and the representative early-commencement reduction schedule above. It is an educational estimate only. It does <em>not</em> model cash-balance plans (CPMG), physician plans (TPMG), the Local 39 multiemployer pension, pension offsets, blended multipliers, unused-sick-leave credit, or joint-and-survivor reductions. It uses completed whole years. <strong>Always confirm a client's actual figures with the KPRC and the controlling SPD.</strong></p>
+    <p>This tool models the <strong>standard KP multiplier formula</strong> and the representative early-commencement reduction schedule above. It is an educational estimate only. It does <em>not</em> model cash-balance plans (CPMG), physician plans (TPMG), the Local 39 multiemployer pension, pension offsets, blended multipliers, unused-sick-leave credit, or joint-and-survivor reductions. It also assumes retirement from <strong>active employment</strong>: a deferred vested benefit started early is typically reduced on a steeper actuarial basis than shown here. It uses completed whole years. <strong>Always confirm a client's actual figures with the KPRC and the controlling SPD.</strong></p>
   </div>
 </section>
 
@@ -667,6 +693,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
         <li class="pro">50% J&amp;S is the default if married</li>
         <li class="con">Lower monthly payment than single life</li>
         <li class="con">Beneficiary is locked once payments begin</li>
+        <li class="con">No inflation adjustment</li>
         <li class="con">Taxable as ordinary income</li>
       </ul>
     </div>
@@ -677,10 +704,23 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
         <li class="pro">Rollable to a traditional or Roth IRA</li>
         <li class="pro">Investable &amp; inheritable</li>
         <li class="con">Longevity &amp; market risk shift to the client</li>
-        <li class="con">Subject to RMDs later</li>
+        <li class="con">Amount moves with interest rates (see below)</li>
+        <li class="con">RMDs apply later to pre-tax rollovers (Roth is exempt)</li>
         <li class="con">Direct payout triggers 20% withholding</li>
       </ul>
     </div>
+  </div>
+
+  <h3>Interest rates move the lump sum</h3>
+  <p>The lump sum is not a fixed pot of money waiting at the plan. It is the <strong>actuarial present value of the client's annuity</strong>, converted to a single payment using IRS-prescribed corporate-bond interest rates (the &ldquo;segment rates&rdquo;) that the plan resets on a set schedule. The relationship is inverse: <strong>when the conversion rates rise, the lump sum shrinks; when rates fall, it grows</strong>. The monthly annuity is untouched by any of this; only the lump-sum conversion moves.</p>
+  <p>The effect is not small. Because the lump sum discounts decades of future payments, even a one-percentage-point move in rates can change a large lump sum by tens of thousands of dollars. Plans typically fix the rates using a lookback month and hold them for a stability period (often the plan year), which means two clients with identical pensions can receive meaningfully different lump sums simply because they commenced on opposite sides of a rate reset.</p>
+  <div class="callout gold">
+    <span class="tag">How to use this with a client</span>
+    <p>When a client is leaning toward the lump sum, timing becomes part of the advice. Three concrete moves: <strong>(1)</strong> ask the KPRC which rates apply to the client's intended commencement date and when the plan next resets them; <strong>(2)</strong> if a reset is approaching and rates have moved since the current basis was set, request benefit quotes for commencement dates on each side of the reset and compare them in dollars; <strong>(3)</strong> put the result in context. A rate-driven difference can justify shifting a start date by a few months, but it should not override the bigger suitability question of annuity versus lump sum. Confirm the plan's specific rate basis and reset schedule with the KPRC; do not estimate it.</p>
+  </div>
+  <div class="callout warn">
+    <span class="tag">The commencement-timing trap</span>
+    <p>A client who says &ldquo;I'll just wait a bit longer&rdquo; may assume the lump sum only grows with time. If conversion rates have risen in the meantime, waiting past a rate reset can <em>shrink</em> the quoted lump sum even as the underlying annuity accrues. When a client is near a plan-rate reset, get quotes before assuming which direction time is working.</p>
   </div>
 
   <div class="callout gold">
@@ -808,7 +848,16 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   </div>
   <div class="callout gold">
     <span class="tag">First-meeting question set</span>
-    <p>Which region and employee group/union? · When did you start at Kaiser? · Current age and Years of Service? · Married, and what is your spouse's own income/coverage? · Target retirement age? · Health and longevity outlook? · Any prior Kaiser or Group Health service (offsets)? · What other savings and Social Security expectations do you have? These answers drive every recommendation above.</p>
+    <ul class="tight" style="margin-bottom:10px">
+      <li>Which region and employee group or union are you in?</li>
+      <li>When did you start at Kaiser, and what are your current age and Years of Service?</li>
+      <li>Are you married? What income, savings, and health coverage does your spouse have on their own?</li>
+      <li>What is your target retirement age?</li>
+      <li>How is your health, and what does longevity look like in your family?</li>
+      <li>Any prior Kaiser, Group Health, or trust-plan service (possible offsets)?</li>
+      <li>What other savings do you have, and what do you expect from Social Security?</li>
+    </ul>
+    <p>These answers drive every recommendation above.</p>
   </div>
 </section>
 
@@ -856,10 +905,11 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <dt>Vesting</dt><dd>The point the pension is the employee's to keep &mdash; 5 Years of Service (or age 65 while employed). TSA employee money is always vested.</dd>
     <dt>Normal Retirement</dt><dd>Age 65 &mdash; the pension is payable unreduced.</dd>
     <dt>Early Retirement</dt><dd>Age 55 with 15 Years of Service, or age + service &ge; 75 (&ldquo;Rule of 75&rdquo;); benefit reduced if started before 65.</dd>
-    <dt>Deferred Vested Pension</dt><dd>The benefit for a vested employee who leaves before qualifying for Early/Normal Retirement; generally starts at 65.</dd>
+    <dt>Deferred Vested Pension</dt><dd>The benefit for a vested employee who leaves before qualifying for Early/Normal Retirement; generally starts at 65. Where an earlier start is allowed, the reduction is typically actuarial and steeper than the subsidized early-retirement schedule.</dd>
     <dt>Single Life Annuity</dt><dd>The base form of payment &mdash; a monthly benefit for the retiree's lifetime, with nothing continuing to a survivor.</dd>
     <dt>Joint &amp; Survivor (J&amp;S)</dt><dd>An annuity that continues 50%, 66&#8532;%, or 75% to a survivor. The 50% J&amp;S is the default for married participants.</dd>
     <dt>Pension Offset</dt><dd>A reduction that prevents the same service from being counted under two KP plans (or a Group Health / trust plan).</dd>
+    <dt>Segment rates</dt><dd>IRS-prescribed corporate-bond interest rates used to convert an annuity into a lump sum. Higher rates produce smaller lump sums, and vice versa; the plan resets them on a set schedule. Confirm the applicable rates and reset timing with the KPRC.</dd>
     <dt>TSA</dt><dd>Tax-Sheltered Annuity &mdash; Kaiser's 403(b) employee savings plan at Vanguard; auto-enroll 2% escalating to 6%; pre-tax and/or Roth.</dd>
     <dt>SSRP</dt><dd>Supplemental Savings &amp; Retirement Plan &mdash; employer-funded defined-contribution account (e.g., 5% of pay in the Salaried SPD); 100% vested.</dd>
     <dt>Cash Balance Plan</dt><dd>An account-style defined-benefit plan (used by CPMG physicians) &mdash; a hypothetical balance rather than a FAMC formula.</dd>
@@ -1130,7 +1180,7 @@ secs.forEach(function(s){if(s)obs.observe(s);});
          earlyElig?('Single Life Annuity starting at age '+age+'.'):('If/when eligible to commence at age '+age+'.'));
     }
 
-    note.innerHTML='Estimates use the standard multiplier formula and a representative reduction schedule (whole years). Actual factors, offsets, blended multipliers, and survivor reductions vary by SPD &mdash; verify with the KPRC.';
+    note.innerHTML='Estimates use the standard multiplier formula and a representative reduction schedule (whole years), and assume retirement from active employment. Deferred vested benefits started early are often reduced more steeply. Actual factors, offsets, blended multipliers, and survivor reductions vary by SPD &mdash; verify with the KPRC.';
   }
   window.renderCalc=render;
   [multEl,famcEl,svcEl,ageEl].forEach(function(el){el.addEventListener('input',render);el.addEventListener('change',render);});

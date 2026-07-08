@@ -58,3 +58,24 @@ Accuracy-first per compliance standards; no fabricated figures.
 - All regional SPD source materials (supporting documentation)
 
 **Next steps:** Push to main, update CHANGE_LOG.md.
+
+---
+
+## 2026-07-08 — Content review pass: clarity, insights, streamlining
+
+**Task:** Implement the approved review findings in `Kaiser_Retirement_Benefits_Guide.html`:
+1. Deferred-vested vs. active-retirement reduction distinction (Section 05 + estimator caveats).
+2. Day-one quick-reference table (Section 01).
+3. Second worked example bridging the formula and the early-start reduction (Section 03).
+4. **Expanded lump-sum interest-rate sensitivity explainer in Section 07** (user-flagged as
+   critical advisor concept) + segment-rates glossary entry.
+5. Accuracy fixes: generalize the dated $330,000/2023 IRS pay-cap figure; clarify the RMD
+   note (Roth exempt); add missing cons to the J&S comparison card.
+6. Streamlining: split the hero lead; convert the three service definitions to a table;
+   convert the first-meeting question set to a checklist.
+
+**Risks:** All new quantitative language stays hedged and routed to KPRC/SPD per compliance
+standards; no specific rate/dollar figures asserted as current. Mobile left-rail fallback
+deferred to TODO.
+
+**Next steps:** Edit HTML, validate structure, push, update CHANGE_LOG/TODO.
