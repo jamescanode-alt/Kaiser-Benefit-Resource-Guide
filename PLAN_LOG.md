@@ -44,3 +44,17 @@ only and repeatedly directs advisors to verify actual figures in the KPRC / offi
 Accuracy-first per compliance standards; no fabricated figures.
 
 **Next steps:** Build HTML, verify visually at desktop + mobile, update CHANGE_LOG/TODO.
+
+---
+
+## 2026-07-08 — Make Kaiser Guide Accessible on GitHub
+
+**Task:** Commit and push the existing `Kaiser_Retirement_Benefits_Guide.html` to GitHub so users can access it directly. The guide provides advisors with comprehensive Kaiser retirement benefits information organized by region and plan type.
+
+**Objective:** Ensure the HTML file is available in the repo for users to download, open locally, or access via GitHub Pages.
+
+**Files involved:**
+- `Kaiser_Retirement_Benefits_Guide.html` (existing, ~197KB)
+- All regional SPD source materials (supporting documentation)
+
+**Next steps:** Push to main, update CHANGE_LOG.md.
