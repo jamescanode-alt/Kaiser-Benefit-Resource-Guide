@@ -65,3 +65,7 @@
   https://github.com/jamescanode-alt/Kaiser-Benefit-Resource-Guide
 - ✅ Pushed commit `95f002b` documenting task completion.
 - ✅ Guide ready for advisors to download and use.
+- ✅ GitHub Pages deployed and live at:
+  https://jamescanode-alt.github.io/Kaiser-Benefit-Resource-Guide/
+- ✅ Repository made public and Pages enabled.
+- ✅ `.nojekyll` file added to resolve deployment (commit `dd29e68`).
